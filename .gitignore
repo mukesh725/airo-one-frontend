@@ -1,0 +1,17 @@
+# Large unreferenced archive dumps & high-res raw photo assets (>50MB)
+public/drive-download*
+public/HERO Q.png
+assets/extracted/
+assets/bottles*/
+assets/sqeezer*/
+
+# Vercel deployment metadata
+.vercel
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Node dependencies
+node_modules/
+*.log

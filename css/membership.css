@@ -1,0 +1,2051 @@
+/* ==========================================================================
+   AIRO ONE™ MEMBERSHIP DESIGN SYSTEM & STYLES
+   Reflecting https://www.airoessentials.com/membership
+   Aesthetic: Quiet Luxury, Medical Authority, Apple HIG Precision
+   ========================================================================== */
+
+:root {
+  --airo-green: #006537;
+  --airo-green-dark: #004e2a;
+  --airo-green-light: #e6f3ec;
+  --airo-green-subtle: #f0f7f3;
+  --airo-gold: #c5a059;
+  --airo-gold-dark: #9e7d3b;
+  --airo-gold-light: #fbf7ee;
+  --airo-ink: #1a1a1a;
+  --airo-muted: #5f6368;
+  --airo-paper: #fcfbf9;
+  --airo-card-bg: #ffffff;
+  --airo-border: #e8e6df;
+  --airo-border-focus: #006537;
+  --airo-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --airo-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --airo-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1);
+  --airo-shadow-gold: 0 10px 30px rgba(197, 160, 89, 0.25);
+  --airo-radius: 16px;
+  --airo-radius-lg: 24px;
+  
+  /* Apple SF Pro Typography System */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family: var(--font-sans);
+}
+
+/* Base resets & typography */
+body.membership-page-body {
+  background-color: var(--airo-paper);
+  color: var(--airo-ink);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings & Display Titles: Apple SF Pro Display */
+h1, h2, h3, h4, h5, h6,
+.membership-hero-title,
+.plan-card-title,
+.stepper-card-title,
+.step3-title,
+.perk-title,
+.glance-card-title,
+.faq-question,
+.stat-card-num,
+.modal-membership-title,
+.exclusive-card-title {
+  font-family: var(--font-display);
+}
+
+/* Body & UI Text: Apple SF Pro Text */
+p, span, label, input, select, textarea, button, .perk-desc, .plan-desc, .stepper-field-hint {
+  font-family: var(--font-sans);
+}
+
+/* Membership Main Container */
+.membership-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Top Lookup Bar / Trigger in Header */
+.membership-lookup-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: var(--airo-green);
+  border: 1px solid #d4e5dc;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.membership-lookup-trigger-btn:hover {
+  background: var(--airo-green-light);
+  border-color: var(--airo-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 101, 55, 0.12);
+}
+
+.membership-lookup-trigger-btn svg {
+  stroke: var(--airo-green);
+}
+
+/* Hero Section */
+.membership-hero {
+  padding: 72px 0 48px;
+  text-align: center;
+}
+
+.membership-hero-badge {
+  display: inline-block;
+  background-color: var(--airo-green);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 101, 55, 0.2);
+}
+
+.membership-hero-title {
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--airo-green);
+  letter-spacing: -0.03em;
+  max-width: 900px;
+  margin: 0 auto 24px;
+}
+
+@media (max-width: 768px) {
+  .membership-hero-title {
+    font-size: 34px;
+  }
+}
+
+.membership-hero-subtitle {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #4a5568;
+  max-width: 820px;
+  margin: 0 auto 36px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .membership-hero-subtitle {
+    font-size: 16px;
+  }
+}
+
+.membership-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn-membership-primary {
+  background: var(--airo-green);
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 101, 55, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-membership-primary:hover {
+  background: var(--airo-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 101, 55, 0.35);
+}
+
+.btn-membership-outline {
+  background: #ffffff;
+  color: var(--airo-green);
+  padding: 16px 32px;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--airo-green);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-membership-outline:hover {
+  background: var(--airo-green-light);
+  transform: translateY(-2px);
+}
+
+/* In-Store Notice Banner */
+.membership-instore-banner {
+  background: #ffffff;
+  border: 1px solid #e2ece6;
+  border-left: 5px solid var(--airo-green);
+  padding: 18px 24px;
+  border-radius: 14px;
+  margin: 0 auto 48px;
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--airo-shadow-sm);
+  text-align: left;
+}
+
+.instore-banner-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.instore-banner-text h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--airo-green);
+}
+
+.instore-banner-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* Billing Toggle Segment */
+.membership-billing-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.billing-toggle-wrapper {
+  background: #f0eee6;
+  padding: 5px;
+  border-radius: 9999px;
+  display: inline-flex;
+  position: relative;
+  border: 1px solid #e2ded5;
+}
+
+.billing-toggle-btn {
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.billing-toggle-btn.active {
+  background: #ffffff;
+  color: var(--airo-green);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.billing-pill-badge {
+  background: var(--airo-green);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+/* Membership Tiers Grid (4 Cards) */
+.membership-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 1024px) {
+  .membership-plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .membership-plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Plan Card */
+.membership-plan-card {
+  background: var(--airo-card-bg);
+  border: 1px solid var(--airo-border);
+  border-radius: var(--airo-radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--airo-shadow-sm);
+}
+
+.membership-plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--airo-shadow-md);
+  border-color: #cbd5e1;
+}
+
+.membership-plan-card.popular-tier {
+  border: 2px solid var(--airo-green);
+  box-shadow: 0 12px 36px rgba(0, 101, 55, 0.12);
+  background: #ffffff;
+}
+
+.plan-popular-ribbon {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--airo-green);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 101, 55, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.plan-card-header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0ee;
+}
+
+.plan-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--airo-ink);
+  margin: 0 0 10px;
+}
+
+.plan-price-block {
+  margin-bottom: 6px;
+}
+
+.plan-price-main {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--airo-green);
+  letter-spacing: -0.02em;
+}
+
+.plan-price-cycle {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.plan-gst-tag {
+  display: inline-block;
+  background: #eef7f2;
+  color: var(--airo-green);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.plan-alt-price {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.plan-members-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 12px;
+}
+
+/* Feature List Inside Card */
+.plan-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  flex-grow: 1;
+}
+
+.plan-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+  border-bottom: 1px dashed #f1f1ed;
+}
+
+.plan-feature-item:last-child {
+  border-bottom: none;
+}
+
+.plan-feature-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.plan-feature-item.feature-highlight {
+  font-weight: 600;
+  color: var(--airo-green);
+}
+
+.plan-feature-item.feature-muted {
+  color: #94a3b8;
+}
+
+/* Card Join Buttons */
+.plan-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-card-join {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--airo-green);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 101, 55, 0.15);
+}
+
+.btn-card-join:hover {
+  background: var(--airo-green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 101, 55, 0.25);
+}
+
+.btn-card-alt-join {
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--airo-green);
+  border: 1px solid #d1ded7;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-card-alt-join:hover {
+  background: var(--airo-green-light);
+  border-color: var(--airo-green);
+}
+
+/* Comparison Matrix Section */
+.comparison-section {
+  padding: 48px 0 72px;
+}
+
+.comparison-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.comparison-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--airo-ink);
+  margin: 0 0 12px;
+}
+
+.comparison-subtitle {
+  font-size: 16px;
+  color: var(--airo-muted);
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: var(--airo-radius-lg);
+  border: 1px solid var(--airo-border);
+  box-shadow: var(--airo-shadow-md);
+  margin-bottom: 32px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0ee;
+}
+
+.comparison-table thead th {
+  background: #faf9f6;
+  font-weight: 700;
+  color: var(--airo-ink);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.comparison-table thead th.col-tier {
+  text-align: center;
+  width: 18%;
+}
+
+.comparison-table thead th.col-tier.tier-popular {
+  background: #eef7f2;
+  color: var(--airo-green);
+  border-top: 3px solid var(--airo-green);
+}
+
+.comparison-table td.col-tier {
+  text-align: center;
+}
+
+.comparison-table td.tier-popular {
+  background: rgba(238, 247, 242, 0.4);
+}
+
+.table-cat-row td {
+  background: #f7f6f2;
+  font-weight: 700;
+  color: var(--airo-green);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
+}
+
+.feature-check {
+  color: var(--airo-green);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.feature-dash {
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+/* Pharmacy Discount Note */
+.pharmacy-note-box {
+  background: #fafaf8;
+  border-left: 4px solid var(--airo-gold);
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 64px;
+}
+
+/* Feature Spotlight Sections */
+.spotlight-section {
+  padding: 48px 0;
+}
+
+.spotlight-card {
+  background: #ffffff;
+  border-radius: var(--airo-radius-lg);
+  border: 1px solid var(--airo-border);
+  padding: 48px;
+  margin-bottom: 40px;
+  box-shadow: var(--airo-shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .spotlight-card {
+    padding: 28px 20px;
+  }
+}
+
+.spotlight-badge {
+  display: inline-block;
+  background: var(--airo-gold-light);
+  color: var(--airo-gold-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  border: 1px solid #ebd9b5;
+}
+
+.spotlight-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--airo-ink);
+  margin: 0 0 12px;
+}
+
+.spotlight-subtitle {
+  font-size: 16px;
+  color: #4a5568;
+  max-width: 720px;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+/* Senior Care Grid */
+.senior-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .senior-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.senior-benefit-item {
+  background: var(--airo-green-subtle);
+  border: 1px solid #d2e7dc;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.senior-benefit-tag {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--airo-green);
+  margin-bottom: 8px;
+}
+
+.senior-benefit-desc {
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* Praana 9 Vitals Grid */
+.praana-vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .praana-vitals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .praana-vitals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.praana-vital-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vital-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e6f3ec;
+  color: var(--airo-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.vital-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--airo-ink);
+}
+
+/* 9-Step Assessment Grid */
+.assessment-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+@media (max-width: 1024px) {
+  .assessment-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .assessment-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.assessment-step-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--airo-shadow-sm);
+  transition: transform 0.2s ease;
+}
+
+.assessment-step-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+}
+
+.step-num-pill {
+  display: inline-block;
+  background: var(--airo-green);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.step-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--airo-ink);
+  margin: 0 0 8px;
+}
+
+.step-card-desc {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Care365 Red Theme Section */
+.care365-card {
+  border-left: 6px solid #d02029;
+  background: linear-gradient(135deg, #ffffff 0%, #fff7f7 100%);
+}
+
+.care365-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.care365-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .care365-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.care365-pillar {
+  background: #ffffff;
+  border: 1px solid #fee2e2;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--airo-shadow-sm);
+}
+
+.care365-pillar-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.care365-pillar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #991b1b;
+  margin: 0 0 10px;
+}
+
+.care365-pillar-text {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Every Membership Includes Section */
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .perks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.perk-box {
+  background: #ffffff;
+  border: 1px solid var(--airo-border);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+}
+
+.perk-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--airo-green-light);
+  color: var(--airo-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 22px;
+}
+
+.perk-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--airo-ink);
+  margin: 0 0 8px;
+}
+
+.perk-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Terms & Conditions Section */
+.membership-terms {
+  background: #f7f6f2;
+  border-radius: 16px;
+  padding: 32px;
+  margin: 48px 0;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.membership-terms h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 12px;
+}
+
+.membership-terms ol {
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   MODAL SYSTEMS: 1) DIGITAL CARD LOOKUP  2) IN-STORE ENROLLMENT FLOW
+   ========================================================================== */
+
+.airo-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.airo-modal-backdrop.open {
+  display: flex;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.airo-modal-box {
+  background: #ffffff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 1px solid #e5e7eb;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.airo-modal-box.wide-modal {
+  max-width: 720px;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.94) translateY(12px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.modal-header-bar {
+  padding: 24px 28px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f2f4;
+}
+
+.modal-header-bar h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--airo-ink);
+}
+
+.btn-close-modal {
+  background: #f1f3f5;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4b5563;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-close-modal:hover {
+  background: #e2e8f0;
+  color: #000;
+}
+
+.modal-inner-content {
+  padding: 28px;
+}
+
+/* Form Groups & Inputs */
+.form-field-group {
+  margin-bottom: 20px;
+}
+
+.form-field-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.form-field-group input,
+.form-field-group select,
+.form-field-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field-group input:focus,
+.form-field-group select:focus,
+.form-field-group textarea:focus {
+  outline: none;
+  border-color: var(--airo-green);
+  box-shadow: 0 0 0 3px rgba(0, 101, 55, 0.15);
+}
+
+.form-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .form-two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Plan Picker Segment inside modal */
+.modal-plan-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .modal-plan-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.modal-plan-pill {
+  border: 1.5px solid #e5e7eb;
+  padding: 10px 8px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-plan-pill.selected {
+  border-color: var(--airo-green);
+  background: var(--airo-green-light);
+}
+
+.modal-plan-pill strong {
+  display: block;
+  font-size: 12px;
+  color: var(--airo-ink);
+}
+
+.modal-plan-pill span {
+  font-size: 11px;
+  color: var(--airo-green);
+  font-weight: 600;
+}
+
+/* Digital Card Component (Emerald Gold Luxury) */
+.digital-membership-card-wrap {
+  perspective: 1000px;
+  margin: 24px auto;
+  max-width: 440px;
+}
+
+.digital-card {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #004d2a 0%, #006537 50%, #00361d 100%);
+  border-radius: 20px;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #ffffff;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 60, 30, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.digital-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.digital-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.card-brand-logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-brand-pill {
+  background: var(--airo-gold);
+  color: #1a1a1a;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.card-status-badge {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-green-dot {
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.digital-card-mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.card-chip {
+  width: 44px;
+  height: 32px;
+  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+  border-radius: 6px;
+  border: 1px solid #d4af37;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+.card-chip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.card-qr-box {
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-qr-box img {
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+.digital-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+}
+
+.card-holder-name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 2px;
+}
+
+.card-plan-name {
+  font-size: 12px;
+  color: var(--airo-gold);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.card-meta-right {
+  text-align: right;
+}
+
+.card-id-text {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 2px;
+}
+
+.card-expiry-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Enrollment Step Progress Bar */
+.enroll-step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.step-indicator-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.step-indicator-item.active {
+  color: var(--airo-green);
+}
+
+.step-number-bubble {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.step-indicator-item.active .step-number-bubble {
+  background: var(--airo-green);
+  color: #ffffff;
+}
+
+.step-indicator-item.completed .step-number-bubble {
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* Summary Review Box (Step 2) */
+.review-summary-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.review-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+}
+
+.review-summary-row:last-child {
+  border-bottom: none;
+}
+
+.review-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.review-val {
+  font-weight: 700;
+  color: var(--airo-ink);
+}
+
+.review-val.val-green {
+  color: var(--airo-green);
+}
+
+.payment-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Application Submitted Success View (Step 3) */
+.submission-success-view {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.success-check-bubble {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #d1fae5;
+  color: var(--airo-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.success-badge-pill {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.success-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--airo-ink);
+  margin: 0 0 8px;
+}
+
+.success-subtitle {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+
+.voucher-ticket-box {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 0 auto 24px;
+  text-align: left;
+  max-width: 480px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.voucher-ticket-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.voucher-reg-id {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--airo-green);
+}
+
+.instore-instructions-list {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px 20px;
+  text-align: left;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.instore-instructions-list h5 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--airo-green);
+  text-transform: uppercase;
+}
+
+.instore-instructions-list ol {
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   REACT MEMBERSHIP PAGE MATCHING STYLES
+   ========================================================================== */
+
+/* Brand Top Centered Logo & Quick Search Pill */
+.membership-top-brand-center {
+  text-align: center;
+  padding: 24px 0 10px;
+}
+
+.brand-badge-card {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 14px;
+}
+
+.airo-1-brand-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.brand-lookup-action {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.brand-lookup-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.brand-lookup-pill:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: scale(1.02);
+}
+
+/* AIRO ONE AT A GLANCE (4 Cards Grid) */
+.at-a-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 900px) {
+  .at-a-glance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.at-a-glance-card {
+  padding: 20px 16px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.at-a-glance-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 24px rgba(0, 101, 55, 0.1);
+}
+
+.at-a-glance-card.tier-select {
+  border-color: #e2e8f0;
+}
+
+.at-a-glance-card.tier-preferred {
+  border-color: rgba(0, 101, 55, 0.35);
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.at-a-glance-card.tier-signature {
+  border-color: #fde68a;
+}
+
+.at-a-glance-card.tier-infinite {
+  border-color: #a7f3d0;
+  background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+}
+
+.at-a-glance-tier-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.at-a-glance-price {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--airo-green);
+  margin-bottom: 2px;
+}
+
+.at-a-glance-cycle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.at-a-glance-gst-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--airo-green);
+  background: #e6f3ec;
+  border: 1px solid rgba(0, 101, 55, 0.2);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  margin: 6px 0;
+}
+
+.at-a-glance-alt-price {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.at-a-glance-desc {
+  font-size: 12px;
+  color: #475569;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   INLINE STEPPER SECTION (Step 1, Step 2, Step 3)
+   ========================================================================== */
+.membership-stepper-section {
+  max-width: 860px;
+  margin: 0 auto 60px;
+  padding: 0 16px;
+}
+
+.stepper-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+
+.stepper-progress-line {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  right: 30px;
+  height: 3px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.stepper-progress-fill {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  height: 3px;
+  background: var(--airo-green);
+  z-index: 1;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+.stepper-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.stepper-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  background: #e2e8f0;
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.stepper-node.active .stepper-circle {
+  background: var(--airo-green);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 101, 55, 0.2);
+}
+
+.stepper-label {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.stepper-node.active .stepper-label {
+  color: var(--airo-green);
+}
+
+/* Stepper Card Frame */
+.stepper-content-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 44px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.stepper-card-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stepper-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+
+.stepper-card-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.stepper-back-link {
+  font-size: 13px;
+  color: var(--airo-green);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.stepper-back-link:hover {
+  text-decoration: underline;
+}
+
+/* Form Layout */
+.stepper-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .stepper-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stepper-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepper-form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.stepper-form-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.stepper-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.stepper-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.stepper-input {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #1e293b;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.stepper-input.no-icon {
+  padding-left: 16px;
+}
+
+.stepper-input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--airo-green);
+  box-shadow: 0 0 0 3px rgba(0, 101, 55, 0.15);
+}
+
+.stepper-textarea {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #1e293b;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 72px;
+  box-sizing: border-box;
+}
+
+.stepper-textarea:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--airo-green);
+  box-shadow: 0 0 0 3px rgba(0, 101, 55, 0.15);
+}
+
+.stepper-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 20px;
+}
+
+.btn-stepper-cancel {
+  padding: 12px 24px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-stepper-cancel:hover {
+  background: #e2e8f0;
+}
+
+.btn-stepper-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--airo-green);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 101, 55, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-stepper-primary:hover {
+  background: var(--airo-green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 101, 55, 0.4);
+}
+
+/* Step 2 Plan Selection Cards */
+.step2-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+@media (max-width: 860px) {
+  .step2-plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .step2-plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.step2-plan-card {
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px 14px;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.step2-plan-card:hover {
+  border-color: #cbd5e1;
+}
+
+.step2-plan-card.selected {
+  border-color: var(--airo-green);
+  background: #f0fdf4;
+  box-shadow: 0 4px 16px rgba(0, 101, 55, 0.12);
+}
+
+.step2-plan-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--airo-green);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.step2-plan-card.selected .step2-plan-badge {
+  display: flex;
+}
+
+.step2-plan-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 6px;
+}
+
+.step2-plan-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--airo-green);
+  margin: 0;
+}
+
+.step2-plan-desc {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+  line-height: 1.4;
+}
+
+/* Step 2 Application Overview Box */
+.step2-overview-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: 24px;
+  font-size: 13px;
+  color: #334155;
+}
+
+.step2-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 24px;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .step2-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Step 3 Success View */
+.step3-success-container {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.step3-check-bubble {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: var(--airo-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: inset 0 2px 6px rgba(0, 101, 55, 0.15);
+}
+
+.step3-status-badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.step3-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+
+.step3-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.step3-summary-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.step3-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 13px;
+}
+
+.step3-summary-row:last-child {
+  border-bottom: none;
+}
+

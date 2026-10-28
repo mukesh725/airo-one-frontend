@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Security Headers & Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://tagmanager.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://tagmanager.google.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https: https://www.googletagmanager.com https://ssl.gstatic.com https://www.google-analytics.com; frame-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Shop AIRO Essentials — 100% pesticide-free organic produce, chilled farm dairy, cold-pressed longevity elixirs, and clean kitchen staples delivered to your door.">
+  <meta name="theme-color" content="#ffffff">
+  
+  <title>Shop AIRO Essentials — Clean Organic Groceries, Cold-Pressed Juices &amp; Superfoods</title>
+  
+  <!-- Typography: Apple SF Pro System Fonts (SF Pro Display for Headings, SF Pro Text for Body & UI) -->
+  <link rel="icon" type="image/png" href="public/airo-health-favicon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="essentials-standalone-body">
+
+
+
+  <!-- Site Header -->
+  <header class="site-header" id="topHeader">
+    <div class="top-nav-bar">
+      <div class="nav-container top-nav-inner">
+        <!-- 1. LEFT: Brand Logo -->
+        <div class="brand-logo-container">
+          <a href="index.html" class="brand-logo" aria-label="AIRO Homepage">
+            <img src="public/airo-1-logo.png" alt="AIRO ONE" class="brand-logo-img">
+          </a>
+        </div>
+
+        <!-- Mobile Center Search Bar (Middle on Mobile Screens <= 900px) -->
+        <div class="mobile-center-search" id="mobileSearchTrigger" role="button" tabindex="0" aria-label="Search catalog">
+          <svg class="mobile-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="mobile-search-text">Search AIRO...</span>
+        </div>
+
+        <!-- 2. CENTER: Perfectly Centered Ecosystem Navigation Menu Bar -->
+        <nav class="top-center-menu" aria-label="Ecosystem Services">
+          <a href="index.html" class="top-nav-link">Home</a>
+          <a href="essentials.html" class="top-nav-link active">AIRO Essentials</a>
+          <a href="pharmacy.html" class="top-nav-link">Pharmacy &amp; Compounding</a>
+          <a href="index.html#minute-clinic-services" class="top-nav-link">Minute Clinic</a>
+          <a href="membership.html" class="top-nav-link">Membership</a>
+        </nav>
+
+        <!-- 3. RIGHT: Deliver, Search, Login, Bag Icons in a Balanced Cluster -->
+        <div class="top-right-actions">
+          <!-- Delivery Location Selector (Icon Only) -->
+          <button class="icon-btn location-btn" id="locationSelectorBtn" aria-expanded="false" aria-haspopup="dialog" aria-label="Select delivery location" title="Deliver to Hyderabad">
+            <svg class="loc-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </button>
+
+          <!-- Search Button (Icon Only) -->
+          <button class="icon-btn search-toggle-btn" id="searchToggleBtn" aria-label="Search catalog" title="Search catalog">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- User Account / Login Button (Icon Only) -->
+          <button class="icon-btn user-account-btn" id="accountBtn" aria-label="Customer account and profile" title="Account / Login">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+
+          <!-- Cart / Bag Button (Icon Only with Counter Badge, No Text) -->
+          <button class="icon-btn cart-btn" id="cartToggleBtn" aria-label="Shopping bag containing 0 items" title="Shopping Bag">
+            <svg class="cart-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-count-badge" id="cartCountBadge">0</span>
+          </button>
+
+          <!-- 3-Line Mobile Hamburger Menu Button (Right Side on Mobile) -->
+          <button class="mobile-hamburger-btn" id="mobileMenuToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Over Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-title">Menu</span>
+        <button class="mobile-nav-close-btn" id="closeMobileNavBtn" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+        <a href="index.html" class="mobile-nav-link"><span>Home</span> ›</a>
+        <a href="essentials.html" class="mobile-nav-link active"><span>AIRO Essentials</span> ›</a>
+        <a href="pharmacy.html" class="mobile-nav-link"><span>Pharmacy &amp; Compounding</span> ›</a>
+        <a href="index.html#minute-clinic-services" class="mobile-nav-link"><span>Minute Clinic (141 Services)</span> ›</a>
+        <a href="membership.html" class="mobile-nav-link"><span>AIRO ONE™ Membership</span> ›</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button class="mobile-drawer-btn" id="mobileLocationBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Deliver to Hyderabad</span>
+        </button>
+        <button class="mobile-drawer-btn" id="mobileAccountBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Account &amp; Profile</span>
+        </button>
+        <button class="mobile-drawer-btn mobile-drawer-cart-btn" id="mobileCartBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
+          <span>View Shopping Bag <strong id="mobileCartCount">(0)</strong></span>
+        </button>
+        <div class="mobile-drawer-contact">
+          <span>Concierge Helpline:</span>
+          <a href="tel:+919000172121">+91 90001 72121</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Forest Green Hero Header Banner -->
+    <div class="essentials-hero-banner">
+      <div class="nav-container essentials-hero-inner">
+        <a href="index.html" class="back-to-home-btn" id="backToHomeBtn" aria-label="Back to home page">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>BACK TO HOME</span>
+        </a>
+        <h1 class="essentials-shop-title">Shop <em>AIRO Essentials</em></h1>
+        <p class="essentials-shop-subtitle">Browse our complete catalog of farm-fresh greens, quality staples, and wellness-focused daily essentials.</p>
+      </div>
+    </div>
+
+    <!-- SHOP BY CATEGORY SECTION -->
+    <div class="nav-container essentials-categories-wrapper">
+      <div class="section-header">
+        <div>
+          <span class="hero-eyebrow" style="color: var(--color-muted); font-size: 11px; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">CURATED AISLES</span>
+          <h2 class="section-title" id="shopByCategoryHeading" style="font-size: 22px;">SHOP BY CATEGORY</h2>
+        </div>
+        <button type="button" class="btn" id="allCategoriesResetBtn">VIEW ALL CATEGORIES ›</button>
+      </div>
+
+      <div class="categories-scroll-track" role="region" aria-label="Category List">
+        <!-- 1. Fruits & vegetables -->
+        <button class="category-item-pill" data-category="fruits-vegetables" aria-label="Category: Fruits and vegetables">
+          <div class="category-img-circle">
+            <img src="public/categories/cat_veg.jpg" alt="AIRO Fresh organic fruits and vegetables" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Fruits &amp; vegetables</span>
+        </button>
+
+        <!-- 2. Dairy & eggs -->
+        <button class="category-item-pill" data-category="dairy-eggs" aria-label="Category: Dairy and eggs">
+          <div class="category-img-circle">
+            <img src="public/categories/cat_dairy.jpg" alt="AIRO Fresh chilled dairy and organic eggs" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Dairy &amp; eggs</span>
+        </button>
+
+        <!-- 3. Beverages -->
+        <button class="category-item-pill" data-category="beverages" aria-label="Category: Beverages">
+          <div class="category-img-circle">
+            <img src="public/categories/cat_beverages.jpg" alt="AIRO Cold-pressed wellness juices and drinks" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Beverages</span>
+        </button>
+
+        <!-- 4. Staples -->
+        <button class="category-item-pill" data-category="staples" aria-label="Category: Staples">
+          <div class="category-img-circle">
+            <img src="public/categories/cat_staples.jpg" alt="AIRO Organic grains, flours, and kitchen staples" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Staples</span>
+        </button>
+
+        <!-- 5. Snacks -->
+        <button class="category-item-pill" data-category="snacks" aria-label="Category: Snacks">
+          <div class="category-img-circle">
+            <img src="public/categories/cat_snacks.jpg" alt="AIRO Clean wholesome snacks and roasted nuts" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Snacks</span>
+        </button>
+
+        <!-- 6. Personal care -->
+        <button class="category-item-pill" data-category="personal-care" aria-label="Category: Personal care">
+          <div class="category-img-circle">
+            <img src="public/categories/cat_personal.jpg" alt="AIRO Clean personal care and gentle skincare" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Personal care</span>
+        </button>
+
+        <!-- 7. Home care -->
+        <button class="category-item-pill" data-category="home-care" aria-label="Category: Home care">
+          <div class="category-img-circle">
+            <img src="public/categories/cat_home.jpg" alt="AIRO Non-toxic eco-friendly home care products" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Home care</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Filter Pills Bar -->
+    <div class="essentials-filter-bar">
+      <div class="nav-container essentials-pills-scroll">
+        <button type="button" class="filter-pill active" data-filter="all">ALL</button>
+        <button type="button" class="filter-pill" data-filter="produce">Organic Produce</button>
+        <button type="button" class="filter-pill" data-filter="dairy">Dairy &amp; Eggs</button>
+        <button type="button" class="filter-pill" data-filter="juices">Cold-Pressed</button>
+        <button type="button" class="filter-pill" data-filter="staples">Clean Staples</button>
+        <button type="button" class="filter-pill" data-filter="snacks">Healthy Snacks</button>
+      </div>
+    </div>
+
+    <!-- Collection Controls Bar: HIDE FILTERS & SORT BY -->
+    <div class="collection-controls-bar">
+      <div class="nav-container collection-controls-inner">
+        <!-- Left: Filter Toggle Button -->
+        <button id="toggleFilterSidebarBtn" class="control-bar-btn filter-toggle-btn" aria-expanded="true" aria-controls="filterSidebar">
+          <svg class="filter-funnel-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+          <span id="filterToggleText">HIDE FILTERS</span>
+          <svg class="filter-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Right: Sort By Dropdown -->
+        <div class="sort-by-dropdown-container">
+          <button id="sortByTriggerBtn" class="control-bar-btn sort-by-btn" aria-haspopup="listbox" aria-expanded="false">
+            <span id="currentSortLabel">SORT BY</span>
+            <svg class="sort-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div id="sortByMenu" class="sort-dropdown-menu" role="listbox" style="display: none;">
+            <button class="sort-menu-item active" data-sort="featured" role="option" aria-selected="true">Featured Products</button>
+            <button class="sort-menu-item" data-sort="price-low-high" role="option" aria-selected="false">Price: Low to High</button>
+            <button class="sort-menu-item" data-sort="price-high-low" role="option" aria-selected="false">Price: High to Low</button>
+            <button class="sort-menu-item" data-sort="name-a-z" role="option" aria-selected="false">Alphabetical: A to Z</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catalog Layout with Collapsible Filter Sidebar and Product Grid -->
+    <div class="nav-container essentials-catalog-layout">
+      <!-- Left Filter Sidebar -->
+      <aside class="collection-filter-sidebar" id="filterSidebar" aria-label="Essentials Product Filters">
+        <!-- Accordion 1: Grocery Category -->
+        <div class="filter-accordion-group">
+          <button type="button" class="filter-accordion-header" aria-expanded="true" data-target="filterCategory">
+            <span class="filter-accordion-title">Category</span>
+            <svg class="filter-accordion-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="filter-accordion-body" id="filterCategory">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="category" value="produce">
+              <span class="filter-item-label">Fresh Organic Produce</span>
+              <span class="filter-item-count">(12)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="category" value="dairy">
+              <span class="filter-item-label">Dairy &amp; Farm Eggs</span>
+              <span class="filter-item-count">(8)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="category" value="bakery">
+              <span class="filter-item-label">Artisan Bakery</span>
+              <span class="filter-item-count">(6)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="category" value="staples">
+              <span class="filter-item-label">Clean Kitchen Staples</span>
+              <span class="filter-item-count">(14)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="category" value="snacks">
+              <span class="filter-item-label">Wholesome Snacks</span>
+              <span class="filter-item-count">(10)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="category" value="beverages">
+              <span class="filter-item-label">Cold-Pressed Juices</span>
+              <span class="filter-item-count">(7)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="category" value="personal-care">
+              <span class="filter-item-label">Clean Personal Care</span>
+              <span class="filter-item-count">(5)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Accordion 2: Price Range -->
+        <div class="filter-accordion-group">
+          <button type="button" class="filter-accordion-header" aria-expanded="true" data-target="filterPrice">
+            <span class="filter-accordion-title">Price Range</span>
+            <svg class="filter-accordion-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="filter-accordion-body" id="filterPrice">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="price" value="under-100">
+              <span class="filter-item-label">Under ₹100</span>
+              <span class="filter-item-count">(9)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="price" value="100-250">
+              <span class="filter-item-label">₹100 to ₹250</span>
+              <span class="filter-item-count">(22)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="price" value="250-500">
+              <span class="filter-item-label">₹250 to ₹500</span>
+              <span class="filter-item-count">(16)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="price" value="above-500">
+              <span class="filter-item-label">Above ₹500</span>
+              <span class="filter-item-count">(8)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Accordion 3: Dietary & Certification -->
+        <div class="filter-accordion-group">
+          <button type="button" class="filter-accordion-header" aria-expanded="true" data-target="filterDiet">
+            <span class="filter-accordion-title">Dietary &amp; Purity</span>
+            <svg class="filter-accordion-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="filter-accordion-body" id="filterDiet">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="diet" value="organic">
+              <span class="filter-item-label">100% Certified Organic</span>
+              <span class="filter-item-count">(35)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="diet" value="pesticide-free">
+              <span class="filter-item-label">Zero Pesticide Guarantee</span>
+              <span class="filter-item-count">(42)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="diet" value="gluten-free">
+              <span class="filter-item-label">Gluten-Free</span>
+              <span class="filter-item-count">(18)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="diet" value="vegan">
+              <span class="filter-item-label">Plant-Based / Vegan</span>
+              <span class="filter-item-count">(24)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox" data-filter-type="diet" value="raw-coldpressed">
+              <span class="filter-item-label">Raw &amp; Cold-Pressed</span>
+              <span class="filter-item-count">(11)</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Main Products Grid -->
+      <div class="collection-products-area">
+        <div class="active-filters-chips-bar" id="activeFiltersChipsBar" style="display: none;"></div>
+        <div class="products-grid essentials-products-grid" id="essentialsCatalogGrid">
+          
+          <!-- Product 1: Hydroponic Baby Spinach -->
+          <article class="product-card" data-category="produce" data-diet="organic pesticide-free vegan gluten-free" data-price="95" data-name="Hydroponic Baby Spinach" data-product-id="es-1">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_spinach.jpg" alt="AIRO Fresh Hydroponic Baby Spinach" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">250g</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-1" data-name="Hydroponic Baby Spinach" data-weight="250g" data-price="95" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">100% ORGANIC</span>
+              <h3 class="product-title">Hydroponic Baby Spinach</h3>
+              <p class="product-benefit-blurb">Soil-free indoor cultured tender spinach leaves, zero pesticide trace</p>
+              <span class="product-price">₹95</span>
+            </div>
+          </article>
+
+          <!-- Product 2: Vedic A2 Cow Milk -->
+          <article class="product-card" data-category="dairy" data-diet="organic" data-price="130" data-name="Vedic A2 Whole Milk" data-product-id="es-2">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_milk.jpg" alt="Pure Vedic A2 Gir Cow Milk" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">1000ml</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-2" data-name="Vedic A2 Whole Milk" data-weight="1L" data-price="130" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">A2 GIR COW</span>
+              <h3 class="product-title">Vedic A2 Whole Milk</h3>
+              <p class="product-benefit-blurb">Grass-fed raw chilled cow milk bottled within 3 hours of morning milking</p>
+              <span class="product-price">₹130</span>
+            </div>
+          </article>
+
+          <!-- Product 3: Raw Glow Cleanse Juice -->
+          <article class="product-card" data-category="beverages" data-diet="organic pesticide-free vegan raw-coldpressed" data-price="210" data-name="Raw Glow Cleanse Juice" data-product-id="es-3">
+            <div class="product-img-wrapper">
+              <img src="public/images/drink-airo-showcase.jpg" alt="AIRO Raw Glow Cleanse Cold-Pressed Juice" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">350ml</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-3" data-name="Raw Glow Cleanse Juice" data-weight="350ml" data-price="210" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">COLD-PRESSED</span>
+              <h3 class="product-title">Raw Glow Cleanse Juice</h3>
+              <p class="product-benefit-blurb">Hydraulic pressed green apple, celery, cucumber, kale &amp; ginger</p>
+              <span class="product-price">₹210</span>
+            </div>
+          </article>
+
+          <!-- Product 4: Single-Estate Himalayan Honey -->
+          <article class="product-card" data-category="staples" data-diet="organic raw-coldpressed" data-price="380" data-name="Raw Himalayan White Honey" data-product-id="es-4">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_bread.jpg" alt="Artisan Sourdough & Honey" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">400g</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-4" data-name="Raw Himalayan White Honey" data-weight="400g" data-price="380" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">RAW &amp; UNFILTERED</span>
+              <h3 class="product-title">Raw Himalayan White Honey</h3>
+              <p class="product-benefit-blurb">High-altitude floral nectar unheated and packed with live beneficial enzymes</p>
+              <span class="product-price">₹380</span>
+            </div>
+          </article>
+
+          <!-- Product 5: Vine Cherry Tomatoes -->
+          <article class="product-card" data-category="produce" data-diet="organic pesticide-free vegan" data-price="140" data-name="Sweet Vine Cherry Tomatoes" data-product-id="es-5">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_tomatoes.jpg" alt="AIRO Heritage Sweet Vine Cherry Tomatoes" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">250g</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-5" data-name="Sweet Vine Cherry Tomatoes" data-weight="250g" data-price="140" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">VINE-RIPENED</span>
+              <h3 class="product-title">Sweet Vine Cherry Tomatoes</h3>
+              <p class="product-benefit-blurb">Harvested red on vine for maximum lycopene and rich natural sugars</p>
+              <span class="product-price">₹140</span>
+            </div>
+          </article>
+
+          <!-- Product 6: Farm Fresh Organic Eggs -->
+          <article class="product-card" data-category="dairy" data-diet="organic gluten-free" data-price="190" data-name="Farm Free-Range Organic Eggs" data-product-id="es-6">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_eggs.jpg" alt="Pasture Raised Free Range Organic Eggs" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">Pack of 6</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-6" data-name="Farm Free-Range Organic Eggs" data-weight="6 pcs" data-price="190" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">PASTURE RAISED</span>
+              <h3 class="product-title">Farm Free-Range Organic Eggs</h3>
+              <p class="product-benefit-blurb">Golden yolk farm eggs from free-range hens fed organic grain and fresh grass</p>
+              <span class="product-price">₹190</span>
+            </div>
+          </article>
+
+          <!-- Product 7: Cold-Pressed Olive Oil -->
+          <article class="product-card" data-category="staples" data-diet="organic vegan gluten-free raw-coldpressed" data-price="240" data-name="Extra Virgin Olive Oil" data-product-id="es-7">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_oil.jpg" alt="First Cold Pressed Extra Virgin Olive Oil" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">500ml</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-7" data-name="Extra Virgin Olive Oil" data-weight="500ml" data-price="240" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">ESTATE PRESSED</span>
+              <h3 class="product-title">Extra Virgin Olive Oil</h3>
+              <p class="product-benefit-blurb">First cold mechanical pressing from Koroneiki olives, high polyphenol</p>
+              <span class="product-price">₹240</span>
+            </div>
+          </article>
+
+          <!-- Product 8: Chlorophyll Green Shield -->
+          <article class="product-card" data-category="beverages" data-diet="organic pesticide-free vegan raw-coldpressed" data-price="220" data-name="Chlorophyll Green Shield" data-product-id="es-8">
+            <div class="product-img-wrapper">
+              <img src="public/categories/cat_beverages.jpg" alt="Pure Chlorophyll Green Shield Juice" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">350ml</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-8" data-name="Chlorophyll Green Shield" data-weight="350ml" data-price="220" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">DETOX FORMULA</span>
+              <h3 class="product-title">Chlorophyll Green Shield</h3>
+              <p class="product-benefit-blurb">Concentrated dark greens, spirulina infusion and lemon cold extract</p>
+              <span class="product-price">₹220</span>
+            </div>
+          </article>
+
+          <!-- Product 9: Ratnagiri Alphonso Mangoes -->
+          <article class="product-card" data-category="produce" data-diet="organic pesticide-free vegan" data-price="350" data-name="Ratnagiri Alphonso Mangoes" data-product-id="es-9">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_mangoes.jpg" alt="Certified Organic Ratnagiri Alphonso Mangoes" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">1kg Box</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-9" data-name="Ratnagiri Alphonso Mangoes" data-weight="1kg" data-price="350" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">GI TAG CERTIFIED</span>
+              <h3 class="product-title">Ratnagiri Alphonso Mangoes</h3>
+              <p class="product-benefit-blurb">Naturally tree-ripened sweet golden mangoes without carbide or ripening agents</p>
+              <span class="product-price">₹350</span>
+            </div>
+          </article>
+
+          <!-- Product 10: Hass Avocados -->
+          <article class="product-card" data-category="produce" data-diet="organic pesticide-free vegan gluten-free" data-price="195" data-name="Organic Hass Avocados" data-product-id="es-10">
+            <div class="product-img-wrapper">
+              <img src="public/categories/cat_veg.jpg" alt="Organic Hass Avocados pack of two" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">2 pcs</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-10" data-name="Hass Avocados (Pack of 2)" data-weight="2 pcs" data-price="195" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">CREAMY RIPE</span>
+              <h3 class="product-title">Organic Hass Avocados</h3>
+              <p class="product-benefit-blurb">High healthy monounsaturated fat buttery flesh, tree-ripened perfection</p>
+              <span class="product-price">₹195</span>
+            </div>
+          </article>
+
+          <!-- Product 11: Seedless Black Grapes -->
+          <article class="product-card" data-category="produce" data-diet="organic pesticide-free vegan" data-price="160" data-name="Organic Black Seedless Grapes" data-product-id="es-11">
+            <div class="product-img-wrapper">
+              <img src="public/curated/prod_grapes.jpg" alt="Sweet Crisp Organic Black Seedless Grapes" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">500g</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-11" data-name="Black Seedless Grapes" data-weight="500g" data-price="160" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">ANTIOXIDANT BOOST</span>
+              <h3 class="product-title">Black Seedless Grapes</h3>
+              <p class="product-benefit-blurb">Deep purple antioxidant-dense crisp grapes with zero synthetic residue</p>
+              <span class="product-price">₹160</span>
+            </div>
+          </article>
+
+          <!-- Product 12: Calendula Baby Lotion -->
+          <article class="product-card" data-category="personal-care" data-diet="organic vegan" data-price="425" data-name="Calendula Gentle Baby Lotion" data-product-id="es-12">
+            <div class="product-img-wrapper">
+              <img src="public/categories/cat_baby.jpg" alt="Calendula Gentle Baby Lotion" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">200ml</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="es-12" data-name="Calendula Baby Lotion" data-weight="200ml" data-price="425" aria-label="Add to bag">+ ADD TO BAG</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cert-tag">PEDIATRIC SAFE</span>
+              <h3 class="product-title">Calendula Baby Lotion</h3>
+              <p class="product-benefit-blurb">Organic biodynamic calendula and unrefined shea butter, fragrance-free</p>
+              <span class="product-price">₹425</span>
+            </div>
+          </article>
+
+          <!-- Empty State Container -->
+          <div id="noProductsFoundMsg" style="display: none; grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+            <p style="font-family: var(--font-medium); font-size: 16px; color: var(--color-muted);">No products found matching these filters.</p>
+            <button type="button" class="btn" style="margin-top: 14px;" id="resetFilterEmptyBtn">RESET ALL FILTERS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="about" role="contentinfo">
+    <div class="nav-container footer-content-wrapper">
+      <!-- Brand & Mission Column -->
+      <div class="footer-col brand-col">
+        <h2 class="footer-brand-logo">AIRO</h2>
+        <p class="footer-tagline">At AIRO, we believe in preventing illness before it happens. Connecting healthy groceries, clinics, pharmacy &amp; compounding, and online care.</p>
+        
+        <!-- Live Verified Contact Details -->
+        <div class="footer-helpline-box" style="margin-top: 16px; font-size: 13px; color: var(--color-muted); line-height: 1.6;">
+          <p style="margin-bottom: 4px;"><strong style="color: var(--color-ink);">Customer Support &amp; Concierge:</strong> <a href="tel:+919000172121" style="color: var(--color-ink); text-decoration: underline;">+91 90001 72121</a></p>
+          <p style="margin-bottom: 4px;"><strong style="color: var(--color-ink);">Health &amp; Clinical Care:</strong> <a href="tel:+9190000182121" style="color: var(--color-ink); text-decoration: underline;">+91 90000 182121</a></p>
+          <p style="margin-bottom: 6px;"><strong style="color: var(--color-ink);">Email:</strong> <a href="mailto:info@airohealthhub.com" style="color: var(--color-ink); text-decoration: underline;">info@airohealthhub.com</a></p>
+          <p style="font-size: 12px; color: #666;">Service Hours: Mon – Fri: 8:00 AM – 8:00 PM | Sat – Sun: 9:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Ecosystem -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Ecosystem</h3>
+        <ul class="footer-links">
+          <li><a href="essentials.html">AIRO Essentials</a></li>
+          <li><a href="pharmacy.html">Pharmacy &amp; Compounding</a></li>
+          <li><a href="index.html#minute-clinic-services">AIRO Minute Clinic</a></li>
+          <li><a href="https://airoemed.com" target="_blank" rel="noopener noreferrer">AIRO eMed ↗</a></li>
+          <li><a href="https://drinkairo.com" target="_blank" rel="noopener noreferrer">Drink AIRO ↗</a></li>
+          <li><a href="index.html#minute-clinic-banner">Praana Smart Chair</a></li>
+          <li><a href="membership.html">AIRO ONE™ Membership</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Physical Hubs & Support -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Hub Locations</h3>
+        <ul class="footer-links" style="font-size: 12.5px; line-height: 1.5;">
+          <li style="margin-bottom: 8px;">
+            <strong style="color: var(--color-ink); display: block;">Kondapur Flagship</strong>
+            <span>Shop No.2, Ground &amp; 1st Floor, Vamsiram's Jyothi Granules, Sy.No.199, Kondapur, Hyderabad - 500084</span>
+          </li>
+          <li style="margin-bottom: 8px;">
+            <strong style="color: var(--color-ink); display: block;">Kompally Hub</strong>
+            <span>Shop No. 12 &amp; 112, Fairmount Downtown, Kompally, Dundigal, Hyderabad - 500100</span>
+          </li>
+          <li><a href="index.html#about" style="color: #143526; font-weight: 600; text-decoration: underline;">View All Hub Details &amp; Directions ›</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Legal & Portals -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Legal &amp; Portals</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#privacy" class="legal-link" data-doc="privacy">Privacy Policy</a></li>
+          <li><a href="index.html#terms" class="legal-link" data-doc="terms">Terms of Service</a></li>
+          <li><a href="index.html#refund" class="legal-link" data-doc="refund">Refund Policy</a></li>
+          <li><a href="index.html#cookie" class="legal-link" data-doc="cookie">Cookie Preferences</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 4: Follow Us -->
+      <div class="footer-col social-col">
+        <h3 class="footer-col-title">Follow Us</h3>
+        <div class="social-links-row">
+          <!-- Instagram -->
+          <a href="https://instagram.com" class="social-icon-btn" aria-label="Follow AIRO on Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="https://twitter.com" class="social-icon-btn" aria-label="Follow AIRO on Twitter" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" class="social-icon-btn" aria-label="Follow AIRO on LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Sub-Footer -->
+    <div class="footer-bottom-bar">
+      <div class="nav-container footer-bottom-inner">
+        <p class="copyright-notice">&copy; 2026 AIRO ONE. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerHeading" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title" id="cartDrawerHeading">
+        Your Cart (<span id="cartDrawerCount">0</span>)
+      </h2>
+      <button class="cart-drawer-close" id="closeCartDrawerBtn" aria-label="Close shopping cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-free-shipping-bar" id="cartFreeShippingBar">
+      <div class="free-shipping-text" id="freeShippingNotice">Add ₹150 more for FREE express delivery!</div>
+      <div class="shipping-progress-track">
+        <div class="shipping-progress-fill" id="shippingProgressFill" style="width: 50%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-items" id="cartDrawerItems"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="subtotal-amount" id="cartSubtotalAmount">₹0</span>
+      </div>
+      <p class="cart-tax-notice">Taxes and temperature-controlled cold-chain packing calculated at checkout.</p>
+      <button class="cart-checkout-btn" id="cartCheckoutBtn">PROCEED TO CHECKOUT</button>
+    </div>
+  </aside>
+
+  <!-- Location Selector Modal -->
+  <div class="modal-overlay" id="locationModal" role="dialog" aria-modal="true" aria-labelledby="locationModalTitle" aria-hidden="true" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="locationModalTitle">Choose Delivery Location</h3>
+        <button class="modal-close" data-close-modal="locationModal" aria-label="Close location selector modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-subtext">Select your preferred delivery hub for farm-fresh groceries and medicines.</p>
+        <div class="pincode-input-row">
+          <input type="text" id="pincodeInput" placeholder="Enter 6-digit Pincode" maxlength="6" aria-label="Enter your 6-digit delivery pincode">
+          <button type="button" class="btn btn-primary" id="applyPincodeBtn">CHECK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal Overlay -->
+  <div class="modal-overlay" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle" aria-hidden="true" style="display: none;">
+    <div class="modal-card search-modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="searchModalTitle">Search AIRO Essentials</h3>
+        <button class="modal-close" data-close-modal="searchModal" aria-label="Close search dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="search-input-wrapper">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="search" id="liveSearchInput" placeholder="Search organic spinach, A2 milk, Greek yogurt..." aria-label="Search catalog">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>

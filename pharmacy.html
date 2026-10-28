@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Security Headers & Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://tagmanager.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://tagmanager.google.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https: https://www.googletagmanager.com https://ssl.gstatic.com https://www.google-analytics.com; frame-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="AIRO Pharmacy & Compounding Lab — Custom bioidentical hormones, allergen-free suspensions, prescription refills, and clinical grade formulations crafted with microgram precision.">
+  <meta name="theme-color" content="#ffffff">
+  
+  <title>Shop AIRO Pharmacy &amp; Compounding — Precision Medicine &amp; Apothecary</title>
+  
+  <!-- Typography: Apple SF Pro System Fonts (SF Pro Display for Headings, SF Pro Text for Body & UI) -->
+  <link rel="icon" type="image/png" href="public/airo-health-favicon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .pharmacy-nav-active {
+      color: var(--color-ink) !important;
+      font-weight: 700 !important;
+      position: relative;
+    }
+    .pharmacy-nav-active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #0E7046;
+      border-radius: 2px;
+    }
+    .pharmacy-hero-banner {
+      background: linear-gradient(135deg, #0B1C13 0%, #133825 55%, #0F2A1C 100%);
+      color: #FFFFFF;
+      padding: clamp(40px, 4.8vw, 60px) 0 clamp(36px, 4vw, 52px);
+      position: relative;
+    }
+    .pharmacy-hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-rx-upload {
+      background: #FFFFFF;
+      color: #0E1A12;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    .btn-rx-upload:hover {
+      background: #E8EDE9;
+    }
+    .btn-rx-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+    .btn-rx-secondary:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+    .pharmacy-badge-tag {
+      background: rgba(14, 112, 70, 0.12);
+      color: #0E7046;
+      border: 1px solid rgba(14, 112, 70, 0.28);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body class="pharmacy-page-body">
+
+
+
+  <!-- Site Header -->
+  <header class="site-header" id="topHeader">
+    <div class="top-nav-bar">
+      <div class="nav-container top-nav-inner">
+        <!-- 1. LEFT: Brand Logo -->
+        <div class="brand-logo-container">
+          <a href="index.html" class="brand-logo" aria-label="AIRO Homepage">
+            <img src="public/airo-1-logo.png" alt="AIRO ONE" class="brand-logo-img">
+          </a>
+        </div>
+
+        <!-- Mobile Center Search Bar (Middle on Mobile Screens <= 900px) -->
+        <div class="mobile-center-search" id="mobileSearchTrigger" role="button" tabindex="0" aria-label="Search pharmacy catalog">
+          <svg class="mobile-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="mobile-search-text">Search Medicines, Rx...</span>
+        </div>
+
+        <!-- 2. CENTER: Perfectly Centered Ecosystem Navigation Menu Bar -->
+        <nav class="top-center-menu" aria-label="Ecosystem Services">
+          <a href="index.html" class="top-nav-link">Home</a>
+          <a href="essentials.html" class="top-nav-link">AIRO Essentials</a>
+          <a href="pharmacy.html" class="top-nav-link pharmacy-nav-active">Pharmacy &amp; Compounding</a>
+          <a href="index.html#minute-clinic-services" class="top-nav-link">Minute Clinic</a>
+          <a href="membership.html" class="top-nav-link">Membership</a>
+        </nav>
+
+        <!-- 3. RIGHT: Deliver, Search, Login, Bag Icons in a Balanced Cluster -->
+        <div class="top-right-actions">
+          <!-- Delivery Location Selector (Icon Only) -->
+          <button class="icon-btn location-btn" id="locationSelectorBtn" aria-expanded="false" aria-haspopup="dialog" aria-label="Select delivery location" title="Deliver to Hyderabad">
+            <svg class="loc-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </button>
+
+          <!-- Search Button (Icon Only) -->
+          <button class="icon-btn search-toggle-btn" id="searchToggleBtn" aria-label="Search pharmacy catalog" title="Search pharmacy catalog">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- User Account / Login Button (Icon Only) -->
+          <button class="icon-btn user-account-btn" id="accountBtn" aria-label="Customer account and profile" title="Account / Login">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+
+          <!-- Cart / Bag Button (Icon Only with Counter Badge, No Text) -->
+          <button class="icon-btn cart-btn" id="cartToggleBtn" aria-label="Shopping bag containing 0 items" title="Shopping Bag">
+            <svg class="cart-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-count-badge" id="cartBadgeCount">0</span>
+          </button>
+
+          <!-- 3-Line Mobile Hamburger Menu Button (Right Side on Mobile) -->
+          <button class="mobile-hamburger-btn" id="mobileMenuToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Over Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-title">Menu</span>
+        <button class="mobile-nav-close-btn" id="closeMobileNavBtn" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+        <a href="index.html" class="mobile-nav-link"><span>Home</span> ›</a>
+        <a href="essentials.html" class="mobile-nav-link"><span>AIRO Essentials</span> ›</a>
+        <a href="pharmacy.html" class="mobile-nav-link active"><span>Pharmacy &amp; Compounding</span> ›</a>
+        <a href="index.html#minute-clinic-services" class="mobile-nav-link"><span>Minute Clinic (141 Services)</span> ›</a>
+        <a href="membership.html" class="mobile-nav-link"><span>AIRO ONE™ Membership</span> ›</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button class="mobile-drawer-btn" id="mobileLocationBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Deliver to Hyderabad</span>
+        </button>
+        <button class="mobile-drawer-btn" id="mobileAccountBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Account &amp; Profile</span>
+        </button>
+        <button class="mobile-drawer-btn mobile-drawer-cart-btn" id="mobileCartBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
+          <span>View Shopping Bag <strong id="mobileCartCount">(0)</strong></span>
+        </button>
+        <div class="mobile-drawer-contact">
+          <span>Concierge Helpline:</span>
+          <a href="tel:+919000172121">+91 90001 72121</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+  </header>
+
+  <!-- Main Content: Pharmacy & Compounding Shop View -->
+  <main id="main-content">
+    
+    <!-- Pharmacy Hero Header Banner -->
+    <div class="pharmacy-hero-banner">
+      <div class="nav-container essentials-hero-inner">
+        <a href="index.html" class="back-to-home-btn" aria-label="Back to home page">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>BACK TO ECOSYSTEM</span>
+        </a>
+        <h1 class="essentials-shop-title">Shop <em>AIRO Pharmacy &amp; Compounding</em></h1>
+        <p class="essentials-shop-subtitle">Personalized bioidentical hormones, allergen-free suspensions, prescription refills, and clinical grade formulations crafted with microgram precision.</p>
+        
+        <div class="pharmacy-hero-cta-row">
+          <button type="button" class="btn btn-rx-upload consult-modal-trigger" data-speciality="Compounding Prescription">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <span>UPLOAD PRESCRIPTION (RX)</span>
+          </button>
+          <button type="button" class="btn btn-rx-secondary consult-modal-trigger" data-speciality="General Pharmacist Consult">
+            <span>CONSULT LICENSED PHARMACIST</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOP BY CLINICAL CATEGORY (Bubble Navigation) -->
+    <div class="nav-container essentials-categories-wrapper" style="margin-top: 36px;">
+      <div class="section-header">
+        <div>
+          <span class="hero-eyebrow" style="color: var(--color-muted); font-size: 11px; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">PRECISION APOTHECARY</span>
+          <h2 class="section-title" style="font-size: 22px;">SHOP BY SPECIALTY</h2>
+        </div>
+        <button type="button" class="btn" id="allPharmacyCategoriesResetBtn">VIEW ALL SPECIALTIES ›</button>
+      </div>
+
+      <div class="categories-scroll-track" role="region" aria-label="Pharmacy Category List">
+        <!-- 1. Bioidenticals -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="bioidenticals" aria-label="Category: Bioidenticals">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/compounded_cream_pump.jpg" alt="Bioidentical Hormone Therapy" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Bioidenticals</span>
+        </button>
+
+        <!-- 2. Compounded Capsules -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="compounded-capsules" aria-label="Category: Compounded Capsules">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/compounded_capsules_bottle.jpg" alt="Custom Compounded Capsules" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Capsules &amp; Drops</span>
+        </button>
+
+        <!-- 3. Hair Health -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="hair-health" aria-label="Category: Hair Health">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/care_hairloss.png" alt="Hair Regrowth Trichology Solutions" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Hair Growth</span>
+        </button>
+
+        <!-- 4. Clinical Dermatology -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="dermatology" aria-label="Category: Clinical Dermatology">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/compounded_cream_pump.jpg" alt="Clinical Dermatology Topicals" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Dermatology</span>
+        </button>
+
+        <!-- 5. Metabolic & Weight -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="metabolic-weight" aria-label="Category: Metabolic and Weight">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/care_weightmanagement.png" alt="Metabolic and Weight Management" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Metabolic</span>
+        </button>
+
+        <!-- 6. Clinical Supplements -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="clinical-supplements" aria-label="Category: Clinical Supplements">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/wellbeing_nutrients.png" alt="Clinical Grade Nutrients and Supplements" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Supplements</span>
+        </button>
+
+        <!-- 7. Sleep & Calm -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="sleep-calm" aria-label="Category: Sleep and Calm">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/compounded_amber_dropper.jpg" alt="Restorative Sublingual Drops" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Sleep &amp; Calm</span>
+        </button>
+
+        <!-- 8. Vitality & Wellness -->
+        <button class="category-item-pill pharmacy-cat-bubble" data-category="vitality" aria-label="Category: Vitality and Wellness">
+          <div class="category-img-circle">
+            <img src="public/images/pharmacy/care_sexualhealth.png" alt="Vitality Flow Solutions" loading="lazy" width="70" height="70">
+          </div>
+          <span class="category-name">Vitality</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Filter Pills Bar -->
+    <div class="essentials-filter-bar">
+      <div class="nav-container essentials-filter-inner">
+        <div class="essentials-pills-scroll" role="tablist" aria-label="Pharmacy Categories">
+          <button class="filter-pill pharmacy-filter-pill active" data-filter="all" role="tab" aria-selected="true">ALL MEDICINES</button>
+          <button class="filter-pill pharmacy-filter-pill" data-filter="bioidenticals" role="tab" aria-selected="false">BIOIDENTICAL HORMONES</button>
+          <button class="filter-pill pharmacy-filter-pill" data-filter="compounded-capsules" role="tab" aria-selected="false">CUSTOM CAPSULES &amp; DROPS</button>
+          <button class="filter-pill pharmacy-filter-pill" data-filter="hair-health" role="tab" aria-selected="false">HAIR HEALTH PROTOCOLS</button>
+          <button class="filter-pill pharmacy-filter-pill" data-filter="dermatology" role="tab" aria-selected="false">CLINICAL DERMATOLOGY</button>
+          <button class="filter-pill pharmacy-filter-pill" data-filter="metabolic-weight" role="tab" aria-selected="false">METABOLIC &amp; WEIGHT</button>
+          <button class="filter-pill pharmacy-filter-pill" data-filter="clinical-supplements" role="tab" aria-selected="false">CLINICAL GRADE VITAMINS</button>
+          <button class="filter-pill pharmacy-filter-pill" data-filter="sleep-calm" role="tab" aria-selected="false">SLEEP &amp; RESTORATION</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collection Controls Bar: HIDE FILTERS & SORT BY -->
+    <div class="collection-controls-bar">
+      <div class="nav-container collection-controls-inner">
+        <!-- Left: Filter Toggle Button -->
+        <button id="togglePharmacyFilterSidebarBtn" class="control-bar-btn filter-toggle-btn" aria-expanded="true" aria-controls="pharmacyFilterSidebar">
+          <svg class="filter-funnel-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+          <span id="pharmacyFilterToggleText">HIDE FILTERS</span>
+          <svg class="filter-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Right: Sort By Dropdown -->
+        <div class="sort-by-dropdown-container">
+          <button id="pharmacySortByTriggerBtn" class="control-bar-btn sort-by-btn" aria-haspopup="listbox" aria-expanded="false">
+            <span id="pharmacyCurrentSortLabel">SORT BY</span>
+            <svg class="sort-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div id="pharmacySortByMenu" class="sort-dropdown-menu" role="listbox" style="display: none;">
+            <button class="sort-menu-item active" data-sort="featured" role="option" aria-selected="true">Featured Compounded</button>
+            <button class="sort-menu-item" data-sort="price-low-high" role="option" aria-selected="false">Price: Low to High</button>
+            <button class="sort-menu-item" data-sort="price-high-low" role="option" aria-selected="false">Price: High to Low</button>
+            <button class="sort-menu-item" data-sort="name-a-z" role="option" aria-selected="false">Alphabetical: A to Z</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catalog Layout with Collapsible Filter Sidebar and Product Grid -->
+    <div class="nav-container essentials-catalog-layout">
+      <!-- Left Filter Sidebar -->
+      <aside class="collection-filter-sidebar" id="pharmacyFilterSidebar" aria-label="Pharmacy Product Filters">
+        <!-- Accordion 1: Specialty Category -->
+        <div class="filter-accordion-group">
+          <button type="button" class="filter-accordion-header" aria-expanded="true" data-target="pharmacyFilterSpecialty">
+            <span class="filter-accordion-title">Specialty Category</span>
+            <svg class="filter-accordion-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="filter-accordion-body" id="pharmacyFilterSpecialty">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="category" value="bioidenticals">
+              <span class="filter-item-label">Bioidentical Hormones</span>
+              <span class="filter-item-count">(2)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="category" value="compounded-capsules">
+              <span class="filter-item-label">Compounded Capsules</span>
+              <span class="filter-item-count">(2)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="category" value="hair-health">
+              <span class="filter-item-label">Hair Regrowth Protocols</span>
+              <span class="filter-item-count">(1)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="category" value="dermatology">
+              <span class="filter-item-label">Clinical Dermatology</span>
+              <span class="filter-item-count">(1)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="category" value="metabolic-weight">
+              <span class="filter-item-label">Metabolic &amp; Weight</span>
+              <span class="filter-item-count">(1)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="category" value="clinical-supplements">
+              <span class="filter-item-label">Clinical Grade Vitamins</span>
+              <span class="filter-item-count">(4)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="category" value="sleep-calm">
+              <span class="filter-item-label">Sleep &amp; Restoration</span>
+              <span class="filter-item-count">(1)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Accordion 2: Formulation Form -->
+        <div class="filter-accordion-group">
+          <button type="button" class="filter-accordion-header" aria-expanded="true" data-target="pharmacyFilterForm">
+            <span class="filter-accordion-title">Formulation Form</span>
+            <svg class="filter-accordion-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="filter-accordion-body" id="pharmacyFilterForm">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="form" value="topical-cream">
+              <span class="filter-item-label">Topical Pump &amp; Cream</span>
+              <span class="filter-item-count">(3)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="form" value="oral-capsule">
+              <span class="filter-item-label">Vegetarian Capsule</span>
+              <span class="filter-item-count">(6)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="form" value="sublingual-drops">
+              <span class="filter-item-label">Sublingual Liquid Drops</span>
+              <span class="filter-item-count">(3)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Accordion 3: Quality Standard -->
+        <div class="filter-accordion-group">
+          <button type="button" class="filter-accordion-header" aria-expanded="true" data-target="pharmacyFilterStandard">
+            <span class="filter-accordion-title">Purity Standards</span>
+            <svg class="filter-accordion-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 5L5 1L9 5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="filter-accordion-body" id="pharmacyFilterStandard">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="standard" value="allergen-free">
+              <span class="filter-item-label">100% Allergen-Free</span>
+              <span class="filter-item-count">(12)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="standard" value="dye-free">
+              <span class="filter-item-label">Synthetic Dye-Free</span>
+              <span class="filter-item-count">(12)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="custom-checkbox pharmacy-chk" data-filter-type="standard" value="microgram-precision">
+              <span class="filter-item-label">Microgram Precision</span>
+              <span class="filter-item-count">(8)</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Main Products Grid -->
+      <div class="collection-products-area">
+        <div class="products-grid essentials-products-grid" id="pharmacyProductsGrid">
+          
+          <!-- Product 1: Bioidentical Progesterone & Estriol Cream -->
+          <article class="product-card" data-category="bioidenticals" data-form="topical-cream" data-standard="allergen-free microgram-precision" data-price="1450" data-name="Bioidentical Progesterone & Estriol Cream" data-product-id="ph-1">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/compounded_cream_pump.jpg" alt="Bioidentical Progesterone & Estriol Cream" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">50ml Metered Pump</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-1" data-name="Bioidentical Progesterone &amp; Estriol Cream" data-weight="50ml Pump" data-price="1450" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">BHRT POTENCY</span>
+              <h3 class="product-title">Bioidentical Progesterone &amp; Estriol Cream</h3>
+              <p class="product-benefit-blurb">Custom-compounded micronized bioidentical hormone suspension in hypoallergenic airless cream</p>
+              <span class="product-price">₹1,450</span>
+            </div>
+          </article>
+
+          <!-- Product 2: Custom Bioidentical DHEA & Pregnenolone Capsules -->
+          <article class="product-card" data-category="bioidenticals" data-form="oral-capsule" data-standard="allergen-free microgram-precision" data-price="1850" data-name="Custom Bioidentical DHEA & Pregnenolone" data-product-id="ph-2">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/compounded_capsules_bottle.jpg" alt="Custom Bioidentical DHEA and Pregnenolone" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">60 Veg Capsules</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-2" data-name="Bioidentical DHEA &amp; Pregnenolone" data-weight="60 Capsules" data-price="1850" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">MICROGRAM PRECISION</span>
+              <h3 class="product-title">Custom Bioidentical DHEA &amp; Pregnenolone</h3>
+              <p class="product-benefit-blurb">Allergen-free adrenal and neurosteroid balance tailored strictly to patient bloodwork</p>
+              <span class="product-price">₹1,850</span>
+            </div>
+          </article>
+
+          <!-- Product 3: Sublingual Melatonin & L-Theanine Dropper -->
+          <article class="product-card" data-category="sleep-calm" data-form="sublingual-drops" data-standard="allergen-free dye-free" data-price="890" data-name="Sublingual Melatonin & L-Theanine Dropper" data-product-id="ph-3">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/compounded_amber_dropper.jpg" alt="Sublingual Melatonin and L-Theanine Dropper" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">30ml Amber Bottle</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-3" data-name="Sublingual Melatonin &amp; L-Theanine Dropper" data-weight="30ml Dropper" data-price="890" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">FAST ABSORPTION</span>
+              <h3 class="product-title">Sublingual Melatonin &amp; L-Theanine Dropper</h3>
+              <p class="product-benefit-blurb">Rapid sublingual delivery for circadian rhythm reset and deep non-REM restorative sleep</p>
+              <span class="product-price">₹890</span>
+            </div>
+          </article>
+
+          <!-- Product 4: Custom Minoxidil & Finasteride Trichology Foam -->
+          <article class="product-card" data-category="hair-health" data-form="topical-cream" data-standard="allergen-free microgram-precision" data-price="1299" data-name="Minoxidil & Finasteride Trichology Foam" data-product-id="ph-4">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/care_hairloss.png" alt="Custom Minoxidil & Finasteride Trichology Foam" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">60ml Precision Foam</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-4" data-name="Minoxidil &amp; Finasteride Trichology Foam" data-weight="60ml Foam" data-price="1299" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">CLINICAL DERM</span>
+              <h3 class="product-title">Minoxidil &amp; Finasteride Trichology Foam</h3>
+              <p class="product-benefit-blurb">Dual-action follicle activator compounded with zero propylene glycol to eliminate scalp itch</p>
+              <span class="product-price">₹1,299</span>
+            </div>
+          </article>
+
+          <!-- Product 5: Clinical Methylated Multivitamin & CoQ10 Complex -->
+          <article class="product-card" data-category="clinical-supplements" data-form="oral-capsule" data-standard="allergen-free dye-free" data-price="1650" data-name="Clinical Methylated Multivitamin & CoQ10" data-product-id="ph-5">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/wellbeing_nutrients.png" alt="Clinical Methylated Multivitamin and CoQ10" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">90 Active Capsules</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-5" data-name="Methylated Multivitamin &amp; CoQ10" data-weight="90 Capsules" data-price="1650" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">BIOAVAILABLE</span>
+              <h3 class="product-title">Clinical Methylated Multivitamin &amp; CoQ10</h3>
+              <p class="product-benefit-blurb">Active L-5-MTHF folate, methylcobalamin, and pure Kaneka CoQ10 for cellular mitochondria</p>
+              <span class="product-price">₹1,650</span>
+            </div>
+          </article>
+
+          <!-- Product 6: High-Potency Omega-3 Triglyceride EPA/DHA -->
+          <article class="product-card" data-category="clinical-supplements" data-form="oral-capsule" data-standard="allergen-free dye-free" data-price="1420" data-name="Pure Triglyceride Omega-3 EPA/DHA" data-product-id="ph-6">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/wellbeing_omega3.png" alt="Pure Triglyceride Omega-3 EPA and DHA" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">120 Softgels</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-6" data-name="Pure Triglyceride Omega-3 EPA/DHA" data-weight="120 Softgels" data-price="1420" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">IFOS 5-STAR</span>
+              <h3 class="product-title">Pure Triglyceride Omega-3 EPA/DHA</h3>
+              <p class="product-benefit-blurb">2,400mg total Omega-3s with verified zero heavy metals and low oxidation TOTOX score</p>
+              <span class="product-price">₹1,420</span>
+            </div>
+          </article>
+
+          <!-- Product 7: Chelated Magnesium Bisglycinate & Malate -->
+          <article class="product-card" data-category="clinical-supplements" data-form="oral-capsule" data-standard="allergen-free dye-free" data-price="980" data-name="Chelated Magnesium Bisglycinate & Malate" data-product-id="ph-7">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/wellbeing_magnesium.png" alt="Chelated Magnesium Bisglycinate & Malate" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">90 TRAACS Capsules</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-7" data-name="Chelated Magnesium Bisglycinate &amp; Malate" data-weight="90 Capsules" data-price="980" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">NEURO-CALM</span>
+              <h3 class="product-title">Chelated Magnesium Bisglycinate &amp; Malate</h3>
+              <p class="product-benefit-blurb">Gentle on the stomach mineral complex for muscle tension release and nervous system calm</p>
+              <span class="product-price">₹980</span>
+            </div>
+          </article>
+
+          <!-- Product 8: Clinical Liposomal Vitamin D3 + K2 (MK-7) Drops -->
+          <article class="product-card" data-category="clinical-supplements" data-form="sublingual-drops" data-standard="allergen-free dye-free" data-price="1150" data-name="Liposomal Vitamin D3 + K2 (MK-7) Drops" data-product-id="ph-8">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/wellbeing_vitamind3.png" alt="Liposomal Vitamin D3 and K2 Drops" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">30ml Coconut MCT</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-8" data-name="Liposomal Vitamin D3 + K2 Drops" data-weight="30ml Dropper" data-price="1150" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">IMMUNE MATRIX</span>
+              <h3 class="product-title">Liposomal Vitamin D3 + K2 (MK-7) Drops</h3>
+              <p class="product-benefit-blurb">5,000 IU cholecalciferol with MenaQ7 K2 in organic MCT oil for optimal calcium balance</p>
+              <span class="product-price">₹1,150</span>
+            </div>
+          </article>
+
+          <!-- Product 9: Metabolic GLP-1 Support Berberine Phytosome -->
+          <article class="product-card" data-category="metabolic-weight" data-form="oral-capsule" data-standard="allergen-free microgram-precision" data-price="1580" data-name="Metabolic Berberine Phytosome Complex" data-product-id="ph-9">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/care_weightmanagement.png" alt="Metabolic Berberine Phytosome Complex" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">60 Delayed Capsules</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-9" data-name="Metabolic Berberine Phytosome" data-weight="60 Capsules" data-price="1580" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">GLP-1 SUPPORT</span>
+              <h3 class="product-title">Metabolic Berberine Phytosome Complex</h3>
+              <p class="product-benefit-blurb">Phytosome-enhanced berberine with chromium picolinate for post-prandial glycemic stability</p>
+              <span class="product-price">₹1,580</span>
+            </div>
+          </article>
+
+          <!-- Product 10: Compounded Tretinoin + Niacinamide + Azelaic Acid -->
+          <article class="product-card" data-category="dermatology" data-form="topical-cream" data-standard="allergen-free microgram-precision" data-price="1750" data-name="Custom Tretinoin & Azelaic Acid Derm Cream" data-product-id="ph-10">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/compounded_cream_pump.jpg" alt="Custom Tretinoin and Azelaic Acid Derm Cream" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">30g Airless Pump</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-10" data-name="Tretinoin &amp; Azelaic Acid Derm Cream" data-weight="30g Pump" data-price="1750" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">Rx COMPOUND</span>
+              <h3 class="product-title">Custom Tretinoin &amp; Azelaic Acid Derm Cream</h3>
+              <p class="product-benefit-blurb">Triple-action compound for clear skin texture, cellular renewal, and collagen synthesis</p>
+              <span class="product-price">₹1,750</span>
+            </div>
+          </article>
+
+          <!-- Product 11: Clinical Nitric Oxide & L-Citrulline Powder -->
+          <article class="product-card" data-category="vitality" data-form="oral-capsule" data-standard="allergen-free dye-free" data-price="1690" data-name="Clinical Nitric Oxide Precursor Complex" data-product-id="ph-11">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/care_sexualhealth.png" alt="Clinical Nitric Oxide Precursor Complex" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">300g Micronized Powder</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-11" data-name="Clinical Nitric Oxide Precursor" data-weight="300g Powder" data-price="1690" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">ENDOTHELIAL FLOW</span>
+              <h3 class="product-title">Clinical Nitric Oxide Precursor Complex</h3>
+              <p class="product-benefit-blurb">Pharmaceutical fermented L-citrulline and maritime pine bark for cardiovascular vitality</p>
+              <span class="product-price">₹1,690</span>
+            </div>
+          </article>
+
+          <!-- Product 12: Allergen-Free Pediatric Liquid Suspension -->
+          <article class="product-card" data-category="compounded-capsules" data-form="sublingual-drops" data-standard="allergen-free dye-free microgram-precision" data-price="920" data-name="Allergen-Free Pediatric Oral Suspension" data-product-id="ph-12">
+            <div class="product-img-wrapper">
+              <img src="public/images/pharmacy/compounded_amber_dropper.jpg" alt="Allergen-Free Pediatric Oral Suspension" loading="lazy" width="300" height="300">
+              <span class="product-weight-badge">100ml Glass Bottle</span>
+              <button class="add-to-cart-btn product-quick-add" data-id="ph-12" data-name="Allergen-Free Pediatric Suspension" data-weight="100ml Bottle" data-price="920" aria-label="Add to cart">+ ADD TO CART</button>
+            </div>
+            <div class="product-info">
+              <span class="pharmacy-badge-tag">DYE &amp; SUGAR FREE</span>
+              <h3 class="product-title">Allergen-Free Pediatric Oral Suspension</h3>
+              <p class="product-benefit-blurb">Custom-compounded natural berry suspension without artificial sweeteners, dyes or parabens</p>
+              <span class="product-price">₹920</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Empty State Container -->
+        <div id="noPharmacyProductsFoundMsg" style="display: none; grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+          <p style="font-family: var(--font-medium); font-size: 16px; color: var(--color-muted);">No pharmacy products found matching these filters.</p>
+          <button type="button" class="btn" style="margin-top: 14px;" id="resetPharmacyFilterEmptyBtn">RESET ALL FILTERS</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="about" role="contentinfo">
+    <div class="nav-container footer-content-wrapper">
+      <!-- Brand & Mission Column -->
+      <div class="footer-col brand-col">
+        <h2 class="footer-brand-logo">AIRO</h2>
+        <p class="footer-tagline">At AIRO, we believe in preventing illness before it happens. Connecting healthy groceries, clinics, pharmacy &amp; compounding, and online care.</p>
+        
+        <!-- Live Verified Contact Details -->
+        <div class="footer-helpline-box" style="margin-top: 16px; font-size: 13px; color: var(--color-muted); line-height: 1.6;">
+          <p style="margin-bottom: 4px;"><strong style="color: var(--color-ink);">Customer Support &amp; Concierge:</strong> <a href="tel:+919000172121" style="color: var(--color-ink); text-decoration: underline;">+91 90001 72121</a></p>
+          <p style="margin-bottom: 4px;"><strong style="color: var(--color-ink);">Health &amp; Clinical Care:</strong> <a href="tel:+9190000182121" style="color: var(--color-ink); text-decoration: underline;">+91 90000 182121</a></p>
+          <p style="margin-bottom: 6px;"><strong style="color: var(--color-ink);">Email:</strong> <a href="mailto:info@airohealthhub.com" style="color: var(--color-ink); text-decoration: underline;">info@airohealthhub.com</a></p>
+          <p style="font-size: 12px; color: #666;">Service Hours: Mon – Fri: 8:00 AM – 8:00 PM | Sat – Sun: 9:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Ecosystem -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Ecosystem</h3>
+        <ul class="footer-links">
+          <li><a href="essentials.html">AIRO Essentials</a></li>
+          <li><a href="pharmacy.html">Pharmacy &amp; Compounding</a></li>
+          <li><a href="index.html#minute-clinic-services">AIRO Minute Clinic</a></li>
+          <li><a href="https://airoemed.com" target="_blank" rel="noopener noreferrer">AIRO eMed ↗</a></li>
+          <li><a href="https://drinkairo.com" target="_blank" rel="noopener noreferrer">Drink AIRO ↗</a></li>
+          <li><a href="index.html#minute-clinic-banner">Praana Smart Chair</a></li>
+          <li><a href="membership.html">AIRO ONE™ Membership</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Physical Hubs & Support -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Hub Locations</h3>
+        <ul class="footer-links" style="font-size: 12.5px; line-height: 1.5;">
+          <li style="margin-bottom: 8px;">
+            <strong style="color: var(--color-ink); display: block;">Kondapur Flagship</strong>
+            <span>Shop No.2, Ground &amp; 1st Floor, Vamsiram's Jyothi Granules, Sy.No.199, Kondapur, Hyderabad - 500084</span>
+          </li>
+          <li style="margin-bottom: 8px;">
+            <strong style="color: var(--color-ink); display: block;">Kompally Hub</strong>
+            <span>Shop No. 12 &amp; 112, Fairmount Downtown, Kompally, Dundigal, Hyderabad - 500100</span>
+          </li>
+          <li><a href="index.html#about" style="color: #143526; font-weight: 600; text-decoration: underline;">View All Hub Details &amp; Directions ›</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Legal & Portals -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Legal &amp; Portals</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#privacy" class="legal-link" data-doc="privacy">Privacy Policy</a></li>
+          <li><a href="index.html#terms" class="legal-link" data-doc="terms">Terms of Service</a></li>
+          <li><a href="index.html#refund" class="legal-link" data-doc="refund">Refund Policy</a></li>
+          <li><a href="index.html#cookie" class="legal-link" data-doc="cookie">Cookie Preferences</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 4: Follow Us -->
+      <div class="footer-col social-col">
+        <h3 class="footer-col-title">Follow Us</h3>
+        <div class="social-links-row">
+          <!-- Instagram -->
+          <a href="https://instagram.com" class="social-icon-btn" aria-label="Follow AIRO on Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="https://twitter.com" class="social-icon-btn" aria-label="Follow AIRO on Twitter" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" class="social-icon-btn" aria-label="Follow AIRO on LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Sub-Footer -->
+    <div class="footer-bottom-bar">
+      <div class="nav-container footer-bottom-inner">
+        <p class="copyright-notice">&copy; 2026 AIRO ONE. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerHeading" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title" id="cartDrawerHeading">
+        Your Cart (<span id="cartDrawerCount">0</span>)
+      </h2>
+      <button class="cart-drawer-close" id="closeCartDrawerBtn" aria-label="Close shopping cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-free-shipping-bar" id="cartFreeShippingBar">
+      <div class="free-shipping-text" id="freeShippingNotice">Add ₹250 more for FREE express pharmacy delivery!</div>
+      <div class="shipping-progress-track">
+        <div class="shipping-progress-fill" id="shippingProgressFill" style="width: 60%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-items" id="cartDrawerItems">
+      <!-- Items dynamically populated via app.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="subtotal-amount" id="cartSubtotalAmount">₹0</span>
+      </div>
+      <p class="cart-tax-notice">Taxes and temperature-controlled medical packing calculated at checkout.</p>
+      <button class="cart-checkout-btn" id="cartCheckoutBtn">PROCEED TO CHECKOUT</button>
+    </div>
+  </aside>
+
+  <!-- Doctor Consult / Prescription Upload Modal -->
+  <div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Order Compounded Prescription</h3>
+        <button class="modal-close" data-close-modal="consultModal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 13.5px; color: var(--color-muted); margin-bottom: 16px;">
+          Upload your doctor's prescription slip or enter custom formulation instructions. Our licensed compounding lab will verify and prepare your order.
+        </p>
+        <form id="pharmacyPrescriptionForm">
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Patient Full Name</label>
+            <input type="text" required placeholder="e.g. Priya Sharma" style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-light); border-radius: 8px; font-size: 14px;">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Contact Number</label>
+            <input type="tel" required placeholder="+91 98765 43210" style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-light); border-radius: 8px; font-size: 14px;">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Upload Prescription Slip (PDF / Image)</label>
+            <input type="file" accept="image/*,.pdf" style="width: 100%; padding: 8px; font-size: 13px;">
+          </div>
+          <div style="margin-bottom: 18px;">
+            <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Specific Compounding Notes or Allergies</label>
+            <textarea rows="3" placeholder="e.g. Preservative-free base needed, lactose allergy..." style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-light); border-radius: 8px; font-size: 13px; font-family: inherit;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">SUBMIT TO COMPOUNDING LAB ›</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+  <script>
+    // Pharmacy-specific catalog interactivity
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('.pharmacy-filter-pill');
+      const bubbles = document.querySelectorAll('.pharmacy-cat-bubble');
+      const checkboxes = document.querySelectorAll('.pharmacy-chk');
+      const cards = document.querySelectorAll('#pharmacyProductsGrid .product-card');
+      const countEl = document.getElementById('pharmacyProductsCount');
+      const emptyMsg = document.getElementById('noPharmacyProductsFoundMsg');
+      const sidebarToggleBtn = document.getElementById('togglePharmacyFilterSidebarBtn');
+      const sidebar = document.getElementById('pharmacyFilterSidebar');
+      const sidebarText = document.getElementById('pharmacyFilterToggleText');
+
+      let activeCategory = 'all';
+
+      function filterPharmacy() {
+        const checkedForms = Array.from(document.querySelectorAll('.pharmacy-chk[data-filter-type="form"]:checked')).map(c => c.value);
+        const checkedStandards = Array.from(document.querySelectorAll('.pharmacy-chk[data-filter-type="standard"]:checked')).map(c => c.value);
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          const cardForm = card.getAttribute('data-form');
+          const cardStandard = card.getAttribute('data-standard') || '';
+
+          const matchCat = (activeCategory === 'all' || cardCat === activeCategory);
+          const matchForm = checkedForms.length === 0 || checkedForms.includes(cardForm);
+          const matchStandard = checkedStandards.length === 0 || checkedStandards.some(std => cardStandard.includes(std));
+
+          if (matchCat && matchForm && matchStandard) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (countEl) countEl.textContent = visibleCount;
+        if (emptyMsg) emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          activeCategory = pill.getAttribute('data-filter');
+          filterPharmacy();
+        });
+      });
+
+      bubbles.forEach(bubble => {
+        bubble.addEventListener('click', () => {
+          const targetCat = bubble.getAttribute('data-category');
+          activeCategory = targetCat;
+          pills.forEach(p => {
+            if (p.getAttribute('data-filter') === targetCat) p.classList.add('active');
+            else p.classList.remove('active');
+          });
+          filterPharmacy();
+        });
+      });
+
+      checkboxes.forEach(chk => {
+        chk.addEventListener('change', filterPharmacy);
+      });
+
+      const resetBtn = document.getElementById('allPharmacyCategoriesResetBtn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          activeCategory = 'all';
+          pills.forEach((p, idx) => {
+            if (idx === 0) p.classList.add('active');
+            else p.classList.remove('active');
+          });
+          checkboxes.forEach(c => c.checked = false);
+          filterPharmacy();
+        });
+      }
+
+      const emptyReset = document.getElementById('resetPharmacyFilterEmptyBtn');
+      if (emptyReset) {
+        emptyReset.addEventListener('click', () => {
+          activeCategory = 'all';
+          pills.forEach((p, idx) => {
+            if (idx === 0) p.classList.add('active');
+            else p.classList.remove('active');
+          });
+          checkboxes.forEach(c => c.checked = false);
+          filterPharmacy();
+        });
+      }
+
+      // Sidebar collapse toggle
+      if (sidebarToggleBtn && sidebar) {
+        sidebarToggleBtn.addEventListener('click', () => {
+          const isHidden = sidebar.classList.toggle('is-collapsed');
+          sidebar.classList.toggle('hidden', isHidden);
+          if (sidebarText) {
+            sidebarText.textContent = isHidden ? 'SHOW FILTERS' : 'HIDE FILTERS';
+          }
+        });
+      }
+
+      // Sort functionality
+      const sortTrigger = document.getElementById('pharmacySortByTriggerBtn');
+      const sortMenu = document.getElementById('pharmacySortByMenu');
+      if (sortTrigger && sortMenu) {
+        sortTrigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = sortMenu.style.display === 'block';
+          sortMenu.style.display = isOpen ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', () => {
+          sortMenu.style.display = 'none';
+        });
+
+        sortMenu.querySelectorAll('.sort-menu-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const sortType = item.getAttribute('data-sort');
+            const grid = document.getElementById('pharmacyProductsGrid');
+            const items = Array.from(grid.querySelectorAll('.product-card'));
+
+            if (sortType === 'price-low-high') {
+              items.sort((a, b) => parseInt(a.dataset.price) - parseInt(b.dataset.price));
+            } else if (sortType === 'price-high-low') {
+              items.sort((a, b) => parseInt(b.dataset.price) - parseInt(a.dataset.price));
+            } else if (sortType === 'name-a-z') {
+              items.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+            }
+            items.forEach(card => grid.appendChild(card));
+            document.getElementById('pharmacyCurrentSortLabel').textContent = item.textContent;
+            sortMenu.querySelectorAll('.sort-menu-item').forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

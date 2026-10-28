@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIRO ONE™ Membership | Complete Health, Pharmacy Savings &amp; Preventive Care</title>
+  <meta name="description" content="AIRO ONE™ is an integrated healthcare membership that brings together healthy shopping, pharmacy savings, doctor consultations, telemedicine, diagnostics, preventive health screenings, and digital healthcare.">
+  
+  <!-- Typography: Apple SF Pro System Fonts (SF Pro Display for Headings, SF Pro Text for Body & UI) -->
+  <link rel="icon" type="image/png" href="public/airo-health-favicon.png">
+
+  <!-- Core & Custom Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/membership.css">
+
+  <style>
+    /* Specific nav overrides for membership page */
+    .membership-nav-active {
+      color: var(--airo-green) !important;
+      font-weight: 700 !important;
+      position: relative;
+    }
+    .membership-nav-active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--airo-green);
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body class="membership-page-body">
+
+  <!-- Sticky Ecosystem Header -->
+  <header class="site-header" id="topHeader">
+    <div class="top-nav-bar">
+      <div class="nav-container top-nav-inner">
+        <!-- 1. LEFT: Brand Logo -->
+        <div class="brand-logo-container">
+          <a href="index.html" class="brand-logo" aria-label="AIRO Homepage">
+            <img src="public/airo-1-logo.png" alt="AIRO Logo" class="brand-logo-img">
+          </a>
+        </div>
+
+        <!-- Mobile Center Search Bar (Middle on Mobile Screens <= 900px) -->
+        <div class="mobile-center-search" id="mobileSearchTrigger" role="button" tabindex="0" aria-label="Search catalog">
+          <svg class="mobile-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="mobile-search-text">Search AIRO...</span>
+        </div>
+
+        <!-- 2. CENTER: Perfectly Centered Ecosystem Navigation Menu Bar -->
+        <nav class="top-center-menu" aria-label="Ecosystem Services">
+          <a href="index.html" class="top-nav-link">Home</a>
+          <a href="essentials.html" class="top-nav-link">AIRO Essentials</a>
+          <a href="pharmacy.html" class="top-nav-link">Pharmacy &amp; Compounding</a>
+          <a href="index.html#minute-clinic-services" class="top-nav-link">Minute Clinic</a>
+          <a href="membership.html" class="top-nav-link active">Membership</a>
+        </nav>
+
+        <!-- 3. RIGHT: Actions in Balanced Cluster -->
+        <div class="top-right-actions">
+          <button class="membership-lookup-trigger-btn trigger-lookup-modal" type="button" aria-label="Check Membership Status and View Digital Card">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+            <span>Member Status</span>
+          </button>
+
+          <!-- Search Button (Icon Only) -->
+          <button class="icon-btn search-toggle-btn" id="searchToggleBtn" aria-label="Search catalog" title="Search catalog">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- 3-Line Mobile Hamburger Menu Button (Right Side on Mobile) -->
+          <button class="mobile-hamburger-btn" id="mobileMenuToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Over Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-title">Menu</span>
+        <button class="mobile-nav-close-btn" id="closeMobileNavBtn" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+        <a href="index.html" class="mobile-nav-link"><span>Home</span> ›</a>
+        <a href="essentials.html" class="mobile-nav-link"><span>AIRO Essentials</span> ›</a>
+        <a href="pharmacy.html" class="mobile-nav-link"><span>Pharmacy &amp; Compounding</span> ›</a>
+        <a href="index.html#minute-clinic-services" class="mobile-nav-link"><span>Minute Clinic (141 Services)</span> ›</a>
+        <a href="membership.html" class="mobile-nav-link active"><span>AIRO ONE™ Membership</span> ›</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button class="mobile-drawer-btn trigger-lookup-modal" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <span>Member Lookup &amp; Digital Card</span>
+        </button>
+        <a href="tel:+919000172121" class="mobile-drawer-btn" style="text-decoration: none; justify-content: center; background: #006537; color: #FFFFFF; border-color: #006537;">
+          <span>Call Concierge: +91 90001 72121</span>
+        </a>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+  </header>
+
+  <!-- Main Content Wrap -->
+  <main id="main-content">
+    
+    <!-- LANDING VIEW (Current Step 0) -->
+    <div id="membershipLandingView">
+
+      <!-- Domain-Aware Centered Header Logo & Quick Lookup Pill (From React Component) -->
+      <div class="membership-top-brand-center">
+        <div class="brand-badge-card">
+          <img src="public/airo-1-logo.png" alt="AIRO 1" class="airo-1-brand-img" onerror="this.src='public/airo-one-logo.png';">
+        </div>
+        <div class="brand-lookup-action">
+          <button class="brand-lookup-pill trigger-lookup-modal" type="button" aria-label="Check Membership Status &amp; View Digital Card">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <span>Already a Member? Check Status &amp; View Digital Card</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- 1. HERO SECTION -->
+      <section class="membership-hero">
+        <div class="membership-container">
+          
+          <span class="membership-hero-badge">AIRO ONE™</span>
+          
+          <h1 class="membership-hero-title">One Membership. Complete Health. Everyday Savings.</h1>
+          
+          <p class="membership-hero-subtitle">
+            AIRO ONE™ is an integrated healthcare membership that brings together healthy shopping, pharmacy savings, doctor consultations, telemedicine, diagnostics, preventive health screenings, and digital healthcare—all under one membership.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="membership-hero-actions">
+            <button class="btn-membership-primary" id="heroViewPlansJoinBtn" type="button">
+              <span>View Plans &amp; Join</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 2. MEMBERSHIP PLANS & PRICING -->
+      <section class="membership-plans-section" id="membership-plans">
+        <div class="membership-container">
+          
+          <!-- Comparison Section Header from React Component -->
+          <div style="text-align: center; margin-bottom: 24px;">
+            <span style="background: #dcfce7; color: #006537; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 12px;">
+              🏪 In-Store Membership &amp; Flexible Payments
+            </span>
+            <h2 style="font-size: clamp(28px, 4vw, 36px); font-weight: 800; color: #006537; margin: 0 0 10px;">Membership Comparison</h2>
+            <p style="color: #64748b; max-width: 680px; margin: 0 auto; font-size: 14px; line-height: 1.5;">
+              Choose between annual or quarterly payments. Memberships are enrolled and paid in-store (Cash, UPI, or Card) at any AIRO Clinic or Pharmacy.
+            </p>
+          </div>
+
+          <!-- Segmented Billing Cycle Toggle -->
+          <div class="membership-billing-selector">
+            <div class="billing-toggle-wrapper" role="tablist" aria-label="Billing Cycle Selector">
+              <button class="billing-toggle-btn active" id="billingToggleQuarterly" type="button" role="tab" aria-selected="true">
+                <span>Quarterly Payments</span>
+                <span class="billing-pill-badge">Incl. 18% GST</span>
+              </button>
+              <button class="billing-toggle-btn" id="billingToggleAnnual" type="button" role="tab" aria-selected="false">
+                <span>Annual Membership</span>
+                <span class="billing-pill-badge" style="background: #92400e;">Best Value • + GST</span>
+              </button>
+            </div>
+            <p style="font-size: 13px; color: #64748b; margin-top: 10px;">Pay every 3 months or save more with 1-year annual coverage</p>
+          </div>
+
+          <!-- AIRO ONE™ AT A GLANCE (4 Cards Grid From React Component) -->
+          <div class="at-a-glance-grid" id="atAGlanceGrid">
+            <!-- 1. SELECT -->
+            <div class="at-a-glance-card tier-select glance-card-clickable" data-plan="select">
+              <span class="at-a-glance-tier-label">SELECT</span>
+              <div class="at-a-glance-price"><span class="glance-price-val" id="glancePrice-select">₹590</span> <span class="at-a-glance-cycle" id="glanceCycle-select">/ qtr</span></div>
+              <span class="at-a-glance-gst-pill" id="glanceGst-select">INCL. 18% GST</span>
+              <div class="at-a-glance-alt-price" id="glanceAlt-select">or ₹1,999/yr (+ GST)</div>
+              <div class="at-a-glance-desc">Only 1 Member</div>
+            </div>
+
+            <!-- 2. PREFERRED -->
+            <div class="at-a-glance-card tier-preferred glance-card-clickable" data-plan="preferred">
+              <span class="at-a-glance-tier-label">PREFERRED</span>
+              <div class="at-a-glance-price"><span class="glance-price-val" id="glancePrice-preferred">₹1,180</span> <span class="at-a-glance-cycle" id="glanceCycle-preferred">/ qtr</span></div>
+              <span class="at-a-glance-gst-pill" id="glanceGst-preferred">INCL. 18% GST</span>
+              <div class="at-a-glance-alt-price" id="glanceAlt-preferred">or ₹3,999/yr (+ GST)</div>
+              <div class="at-a-glance-desc">You + 1 Member</div>
+            </div>
+
+            <!-- 3. SIGNATURE -->
+            <div class="at-a-glance-card tier-signature glance-card-clickable" data-plan="signature">
+              <span class="at-a-glance-tier-label">SIGNATURE</span>
+              <div class="at-a-glance-price"><span class="glance-price-val" id="glancePrice-signature">₹2,065</span> <span class="at-a-glance-cycle" id="glanceCycle-signature">/ qtr</span></div>
+              <span class="at-a-glance-gst-pill" id="glanceGst-signature">INCL. 18% GST</span>
+              <div class="at-a-glance-alt-price" id="glanceAlt-signature">or ₹6,999/yr (+ GST)</div>
+              <div class="at-a-glance-desc">You + 3 Members</div>
+            </div>
+
+            <!-- 4. INFINITE -->
+            <div class="at-a-glance-card tier-infinite glance-card-clickable" data-plan="infinite">
+              <span class="at-a-glance-tier-label">INFINITE</span>
+              <div class="at-a-glance-price"><span class="glance-price-val" id="glancePrice-infinite">₹2,655</span> <span class="at-a-glance-cycle" id="glanceCycle-infinite">/ qtr</span></div>
+              <span class="at-a-glance-gst-pill" id="glanceGst-infinite">INCL. 18% GST</span>
+              <div class="at-a-glance-alt-price" id="glanceAlt-infinite">or ₹8,999/yr (+ GST)</div>
+              <div class="at-a-glance-desc">You + 5 Members</div>
+            </div>
+          </div>
+
+        <!-- 4 Tiers Grid -->
+        <div class="membership-plans-grid">
+          
+          <!-- TIER 1: SELECT -->
+          <div class="membership-plan-card" id="plan-select">
+            <div class="plan-card-header">
+              <h3 class="plan-card-title">AIRO ONE™ Select</h3>
+              <div class="plan-price-block">
+                <span class="plan-price-main" id="priceMain-select">₹590</span>
+                <span class="plan-price-cycle" id="priceCycle-select">/ quarter</span>
+              </div>
+              <div class="plan-gst-tag" id="gstTag-select">★ INCL. 18% GST</div>
+              <div class="plan-alt-price" id="altPrice-select">or ₹1,999 / year (+ GST)</div>
+              
+              <div class="plan-members-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Only 1 Member</span>
+              </div>
+            </div>
+
+            <ul class="plan-feature-list">
+              <li class="plan-feature-item">
+                <span class="feature-dash">—</span>
+                <span style="color: #94a3b8;">*Free Medication (Not included)</span>
+              </li>
+              <li class="plan-feature-item feature-highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pharmacy Discount* <strong>Up to 60%+*</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>In-Store Doctor Consults: <strong>3 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Telemedicine Consults: <strong>3 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Praana Screenings: <strong>4 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Medicine Delivery: <strong>Free Above ₹1,000</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Senior Citizens Care: <strong>Included</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>AIRO App &amp; Reminders</span>
+              </li>
+            </ul>
+
+            <div class="plan-card-actions">
+              <button class="btn-card-join btn-enroll-trigger" id="joinBtn-select" data-plan="select" data-cycle="quarterly" type="button">
+                Join Select (₹590/qtr)
+              </button>
+              <button class="btn-card-alt-join btn-enroll-trigger" data-plan="select" data-cycle="annual" type="button">
+                Join Annual (₹1,999/yr)
+              </button>
+            </div>
+          </div>
+
+          <!-- TIER 2: PREFERRED (POPULAR) -->
+          <div class="membership-plan-card popular-tier" id="plan-preferred">
+            <div class="plan-popular-ribbon">⭐ Most Popular</div>
+            
+            <div class="plan-card-header">
+              <h3 class="plan-card-title">AIRO ONE™ Preferred</h3>
+              <div class="plan-price-block">
+                <span class="plan-price-main" id="priceMain-preferred">₹1,180</span>
+                <span class="plan-price-cycle" id="priceCycle-preferred">/ quarter</span>
+              </div>
+              <div class="plan-gst-tag" id="gstTag-preferred">★ INCL. 18% GST</div>
+              <div class="plan-alt-price" id="altPrice-preferred">or ₹3,999 / year (+ GST)</div>
+              
+              <div class="plan-members-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>You + 1 (2 Members)</span>
+              </div>
+            </div>
+
+            <ul class="plan-feature-list">
+              <li class="plan-feature-item feature-highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>*Free Medication: <strong>1 Member (350+ Meds)</strong></span>
+              </li>
+              <li class="plan-feature-item feature-highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pharmacy Discount* <strong>Up to 60%+*</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>In-Store Doctor Consults: <strong>6 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Telemedicine Consults: <strong>6 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Praana Screenings: <strong>10 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Annual Health Check: <strong>You (1 Member / Yr)</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dietitian Consults: <strong>3 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Senior Citizens Care: <strong>Included</strong></span>
+              </li>
+            </ul>
+
+            <div class="plan-card-actions">
+              <button class="btn-card-join btn-enroll-trigger" id="joinBtn-preferred" data-plan="preferred" data-cycle="quarterly" type="button">
+                Join Preferred (₹1,180/qtr)
+              </button>
+              <button class="btn-card-alt-join btn-enroll-trigger" data-plan="preferred" data-cycle="annual" type="button">
+                Join Annual (₹3,999/yr)
+              </button>
+            </div>
+          </div>
+
+          <!-- TIER 3: SIGNATURE -->
+          <div class="membership-plan-card" id="plan-signature">
+            <div class="plan-card-header">
+              <h3 class="plan-card-title">AIRO ONE™ Signature</h3>
+              <div class="plan-price-block">
+                <span class="plan-price-main" id="priceMain-signature">₹2,065</span>
+                <span class="plan-price-cycle" id="priceCycle-signature">/ quarter</span>
+              </div>
+              <div class="plan-gst-tag" id="gstTag-signature">★ INCL. 18% GST</div>
+              <div class="plan-alt-price" id="altPrice-signature">or ₹6,999 / year (+ GST)</div>
+              
+              <div class="plan-members-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>You + 3 (4 Members)</span>
+              </div>
+            </div>
+
+            <ul class="plan-feature-list">
+              <li class="plan-feature-item feature-highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>*Free Medication: <strong>2 Members (350+ Meds)</strong></span>
+              </li>
+              <li class="plan-feature-item feature-highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pharmacy Discount* <strong>Up to 60%+*</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>In-Store Doctor Consults: <strong>10 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Praana Screenings: <strong>Unlimited</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Preventive Health Check: <strong>You + 1 (2 / Yr)</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Medicine Delivery: <strong>Unlimited Free</strong></span>
+              </li>
+              <li class="plan-feature-item" style="color: #b91c1c; font-weight: 600;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b91c1c" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>AIRO Care365™ &amp; Ambulance</span>
+              </li>
+            </ul>
+
+            <div class="plan-card-actions">
+              <button class="btn-card-join btn-enroll-trigger" id="joinBtn-signature" data-plan="signature" data-cycle="quarterly" type="button">
+                Join Signature (₹2,065/qtr)
+              </button>
+              <button class="btn-card-alt-join btn-enroll-trigger" data-plan="signature" data-cycle="annual" type="button">
+                Join Annual (₹6,999/yr)
+              </button>
+            </div>
+          </div>
+
+          <!-- TIER 4: INFINITE -->
+          <div class="membership-plan-card" id="plan-infinite">
+            <div class="plan-card-header">
+              <h3 class="plan-card-title">AIRO ONE™ Infinite</h3>
+              <div class="plan-price-block">
+                <span class="plan-price-main" id="priceMain-infinite">₹2,655</span>
+                <span class="plan-price-cycle" id="priceCycle-infinite">/ quarter</span>
+              </div>
+              <div class="plan-gst-tag" id="gstTag-infinite">★ INCL. 18% GST</div>
+              <div class="plan-alt-price" id="altPrice-infinite">or ₹8,999 / year (+ GST)</div>
+              
+              <div class="plan-members-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>You + 5 (6 Members)</span>
+              </div>
+            </div>
+
+            <ul class="plan-feature-list">
+              <li class="plan-feature-item feature-highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>*Free Medication: <strong>4 Members (350+ Meds)</strong></span>
+              </li>
+              <li class="plan-feature-item feature-highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pharmacy Discount* <strong>Up to 60%+*</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>In-Store Doctor Consults: <strong>12 / Year</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Telemedicine Consults: <strong>Unlimited</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Praana Screenings: <strong>Unlimited</strong></span>
+              </li>
+              <li class="plan-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Preventive Health Check: <strong>You + 3 (4 / Yr)</strong></span>
+              </li>
+              <li class="plan-feature-item" style="color: #b91c1c; font-weight: 600;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b91c1c" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>AIRO Care365™ &amp; Ambulance</span>
+              </li>
+            </ul>
+
+            <div class="plan-card-actions">
+              <button class="btn-card-join btn-enroll-trigger" id="joinBtn-infinite" data-plan="infinite" data-cycle="quarterly" type="button">
+                Join Infinite (₹2,655/qtr)
+              </button>
+              <button class="btn-card-alt-join btn-enroll-trigger" data-plan="infinite" data-cycle="annual" type="button">
+                Join Annual (₹8,999/yr)
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. DETAILED COMPARISON MATRIX TABLE -->
+    <section class="comparison-section" id="comparison-matrix">
+      <div class="membership-container">
+        
+        <div class="comparison-header">
+          <h2 class="comparison-title">Membership Comparison</h2>
+          <p class="comparison-subtitle">Compare benefits across all AIRO ONE™ tiers. Memberships are enrolled and paid in-store at any AIRO Clinic or Pharmacy.</p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th style="width: 28%;">Benefits</th>
+                <th class="col-tier">AIRO ONE™ Select</th>
+                <th class="col-tier tier-popular">AIRO ONE™ Preferred<br><span style="font-size: 11px; font-weight: normal; color: #006537;">★ Most Popular</span></th>
+                <th class="col-tier">AIRO ONE™ Signature</th>
+                <th class="col-tier">AIRO ONE™ Infinite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1: Quarterly Option -->
+              <tr>
+                <td><strong>Quarterly Payment Option</strong><br><span style="font-size: 12px; color: #666;">Pay every 3 months • All taxes included</span></td>
+                <td class="col-tier"><strong>₹590</strong><br><span style="font-size: 11px; color: #006537;">INCL. 18% GST</span></td>
+                <td class="col-tier tier-popular"><strong>₹1,180</strong><br><span style="font-size: 11px; color: #006537;">INCL. 18% GST</span></td>
+                <td class="col-tier"><strong>₹2,065</strong><br><span style="font-size: 11px; color: #006537;">INCL. 18% GST</span></td>
+                <td class="col-tier"><strong>₹2,655</strong><br><span style="font-size: 11px; color: #006537;">INCL. 18% GST</span></td>
+              </tr>
+              <!-- Row 2: Annual Fee -->
+              <tr>
+                <td><strong>Annual Membership Fee</strong><br><span style="font-size: 12px; color: #666;">+ GST applicable for all plans</span></td>
+                <td class="col-tier">₹1,999<br><span style="font-size: 11px; color: #666;">+ GST applicable</span></td>
+                <td class="col-tier tier-popular">₹3,999<br><span style="font-size: 11px; color: #666;">+ GST applicable</span></td>
+                <td class="col-tier">₹6,999<br><span style="font-size: 11px; color: #666;">+ GST applicable</span></td>
+                <td class="col-tier">₹8,999<br><span style="font-size: 11px; color: #666;">+ GST applicable</span></td>
+              </tr>
+              <!-- Row 3: Payment & Activation -->
+              <tr>
+                <td><strong>Payment &amp; Activation</strong></td>
+                <td class="col-tier">🏪 In-Store Only<br><span style="font-size: 11px; color: #555;">Cash / UPI / Card</span></td>
+                <td class="col-tier tier-popular">🏪 In-Store Only<br><span style="font-size: 11px; color: #555;">Cash / UPI / Card</span></td>
+                <td class="col-tier">🏪 In-Store Only<br><span style="font-size: 11px; color: #555;">Cash / UPI / Card</span></td>
+                <td class="col-tier">🏪 In-Store Only<br><span style="font-size: 11px; color: #555;">Cash / UPI / Card</span></td>
+              </tr>
+              <!-- Row 4: Members Covered -->
+              <tr>
+                <td><strong>Members Covered</strong></td>
+                <td class="col-tier">Only One<br><span style="font-size: 11px; color: #666;">For Individuals</span></td>
+                <td class="col-tier tier-popular">You + 1<br><span style="font-size: 11px; color: #006537; font-weight: 600;">2 Members Total</span></td>
+                <td class="col-tier">You + 3<br><span style="font-size: 11px; color: #006537; font-weight: 600;">4 Members Total</span></td>
+                <td class="col-tier">You + 5<br><span style="font-size: 11px; color: #006537; font-weight: 600;">6 Members Total</span></td>
+              </tr>
+              <!-- Category: Pharmacy & Medicine -->
+              <tr class="table-cat-row">
+                <td colspan="5">Pharmacy &amp; Essential Medications</td>
+              </tr>
+              <tr>
+                <td><strong>*Free Medication for Members</strong><br><span style="font-size: 12px; color: #666;">350+ chronic disease medicines 100% free</span></td>
+                <td class="col-tier"><span class="feature-dash">—</span></td>
+                <td class="col-tier tier-popular"><strong>1 Member Covered</strong></td>
+                <td class="col-tier"><strong>2 Members Covered</strong></td>
+                <td class="col-tier"><strong>4 Members Covered</strong></td>
+              </tr>
+              <tr>
+                <td><strong>*AIRO Pharmacy Discount</strong></td>
+                <td class="col-tier"><span class="feature-check">Up to 60%+</span></td>
+                <td class="col-tier tier-popular"><span class="feature-check">Up to 60%+</span></td>
+                <td class="col-tier"><span class="feature-check">Up to 60%+</span></td>
+                <td class="col-tier"><span class="feature-check">Up to 60%+</span></td>
+              </tr>
+              <tr>
+                <td><strong>Medicine Home Delivery</strong></td>
+                <td class="col-tier">Free Above ₹1,000</td>
+                <td class="col-tier tier-popular">Free Above ₹1,000</td>
+                <td class="col-tier"><strong style="color: #006537;">Unlimited Free</strong></td>
+                <td class="col-tier"><strong style="color: #006537;">Unlimited Free</strong></td>
+              </tr>
+              <!-- Category: Clinical Consultations & Diagnostics -->
+              <tr class="table-cat-row">
+                <td colspan="5">Clinical Consultations &amp; Screenings</td>
+              </tr>
+              <tr>
+                <td><strong>Free In-Store Doctor Consultations</strong></td>
+                <td class="col-tier">3 / Year</td>
+                <td class="col-tier tier-popular">6 / Year</td>
+                <td class="col-tier">10 / Year</td>
+                <td class="col-tier">12 / Year</td>
+              </tr>
+              <tr>
+                <td><strong>Free Telemedicine Consultations</strong></td>
+                <td class="col-tier">3 / Year</td>
+                <td class="col-tier tier-popular">6 / Year</td>
+                <td class="col-tier">10 / Year</td>
+                <td class="col-tier"><strong style="color: #006537;">Unlimited</strong></td>
+              </tr>
+              <tr>
+                <td><strong>AIRO Praana™ Health Screenings</strong></td>
+                <td class="col-tier">4 / Year</td>
+                <td class="col-tier tier-popular">10 / Year</td>
+                <td class="col-tier"><strong style="color: #006537;">Unlimited</strong></td>
+                <td class="col-tier"><strong style="color: #006537;">Unlimited</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Annual Preventive Health Check-up</strong></td>
+                <td class="col-tier"><span class="feature-dash">—</span></td>
+                <td class="col-tier tier-popular">You (1 Member / Yr)</td>
+                <td class="col-tier">You + 1 (2 Members / Yr)</td>
+                <td class="col-tier">You + 3 (4 Members / Yr)</td>
+              </tr>
+              <tr>
+                <td><strong>Dietitian Consultations</strong></td>
+                <td class="col-tier"><span class="feature-dash">—</span></td>
+                <td class="col-tier tier-popular">3 / Year</td>
+                <td class="col-tier">6 / Year</td>
+                <td class="col-tier">10 / Year</td>
+              </tr>
+              <!-- Category: Emergency & Special Support -->
+              <tr class="table-cat-row">
+                <td colspan="5">Emergency Support &amp; Senior Care</td>
+              </tr>
+              <tr>
+                <td><strong>Ambulance Assistance</strong></td>
+                <td class="col-tier"><span class="feature-dash">—</span></td>
+                <td class="col-tier tier-popular"><span class="feature-dash">—</span></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>AIRO Care365™ (24/7 Emergency Support)</strong></td>
+                <td class="col-tier"><span class="feature-dash">—</span></td>
+                <td class="col-tier tier-popular"><span class="feature-dash">—</span></td>
+                <td class="col-tier"><span class="feature-check" style="color: #b91c1c;">✔ Included</span></td>
+                <td class="col-tier"><span class="feature-check" style="color: #b91c1c;">✔ Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Senior Citizens Care (60+ Years)</strong></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+                <td class="col-tier tier-popular"><span class="feature-check">✔ Included</span></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>AIRO App (Digital Health Records)</strong></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+                <td class="col-tier tier-popular"><span class="feature-check">✔ Included</span></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+                <td class="col-tier"><span class="feature-check">✔ Included</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pharmacy Discount Note -->
+        <div class="pharmacy-note-box">
+          <strong>* AIRO Pharmacy Discount:</strong> Members receive up to 60%+ savings on eligible generic medicines and selected AIRO Pharmacy products. Discounts vary based on product category, prescription requirements, manufacturer pricing, applicable government regulations, promotional offers, and availability.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. FOR MORE INFORMATION - SIDE-BY-SIDE (WARM CREAM CARD + IMAGE 2 BORDERS + OUTSIDE NAV ARROWS) -->
+    <section class="spotlight-section" id="more-info-leaflet" style="padding: 40px 0;">
+      <div class="membership-container">
+        <div style="background: #ffffff; border-radius: 36px; padding: 48px; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06); border: 1px solid #f1f5f9; max-width: 1240px; margin: 0 auto;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+            
+            <!-- Left Side: Clean Minimalist Info & CTA (Matches Image 1 Left Side) -->
+            <div style="display: flex; flex-direction: column; justify-content: center; gap: 20px; text-align: left;">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: #e6f3ec; border: 1px solid rgba(0, 101, 55, 0.2); display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                📄
+              </div>
+
+              <div>
+                <span style="display: inline-block; background: #e6f3ec; color: #006537; padding: 6px 16px; border-radius: 9999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid rgba(0, 101, 55, 0.2); margin-bottom: 16px;">
+                  Official Membership Leaflet
+                </span>
+                <h2 style="font-size: 32px; font-weight: 800; color: #111827; margin: 0 0 14px; line-height: 1.2; letter-spacing: -0.02em;">
+                  Need Detailed Plan &amp; Screening Information?
+                </h2>
+                <p style="font-size: 15px; color: #64748b; line-height: 1.6; margin: 0; max-width: 440px;">
+                  Find the right membership for you and your family. Explore plan benefits, pharmacy savings, doctor consultations, preventive health check-ups, and Care365™ emergency support in our official leaflet.
+                </p>
+
+              </div>
+
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-top: 10px;">
+                <a href="assets/Leaf-Let-membership.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: #006537; color: #ffffff; padding: 15px 30px; border-radius: 9999px; font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0, 101, 55, 0.3); transition: all 0.2s;">
+                  <span>For More Information</span>
+                  <span>↗</span>
+                </a>
+                <a href="assets/Leaf-Let-membership.pdf" download="AIRO_ONE_Membership_Leaflet.pdf" style="display: inline-flex; align-items: center; gap: 8px; background: #f1f5f9; color: #334155; padding: 15px 26px; border-radius: 9999px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s;">
+                  <span>Download PDF</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Side: Warm Cream Showcase Card with Outside Navigation Arrows -->
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div style="position: relative; display: flex; align-items: center; justify-content: center; gap: 14px; width: 100%; max-width: 580px;">
+                
+                <!-- Left Navigation Arrow - OUTSIDE the card -->
+                <button id="leaflet-side-prev" type="button" onclick="setLeafletPage(currentLeafletPage - 1)" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #292524; border: 2px solid #e7dfd1; box-shadow: 0 10px 20px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; cursor: not-allowed; opacity: 0.25; transition: all 0.2s; font-size: 22px; font-weight: bold; z-index: 10;" aria-label="Previous Page" title="Previous Page">
+                  &#8592;
+                </button>
+
+                <!-- Warm Cream Card (Matches Image 2 Borders & Framing) -->
+                <div style="flex: 1; max-width: 460px; border-radius: 36px; background: linear-gradient(145deg, #fdfcf9 0%, #faf6ee 50%, #f5efe4 100%); padding: 18px; border: 3px solid #e8e2d5; box-shadow: 0 20px 40px rgba(120, 113, 108, 0.12); display: flex; flex-direction: column; justify-content: space-between;">
+                  
+                  <!-- Leaflet Page Image with Inner Rounded Frame (Matching Image 2) -->
+                  <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e7dfd1; aspect-ratio: 1313 / 1688; display: flex; align-items: center; justify-content: center;">
+                    <img id="leaflet-page-img" src="assets/leaflet-pages/page-1.png" alt="AIRO ONE Membership Leaflet - Page 1" style="width: 100%; height: 100%; object-fit: contain; user-select: none; display: block;">
+                  </div>
+
+                  <!-- Bottom Controls Bar inside Cream Card -->
+                  <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #e8e1d3; display: flex; align-items: center; justify-content: space-between; color: #292524; padding-left: 4px; padding-right: 4px;">
+                    <span id="leaflet-page-num" style="font-size: 13px; font-weight: 700; color: #292524; letter-spacing: 0.02em;">
+                      Page 1 of 3
+                    </span>
+
+                    <!-- Page Pill Indicators -->
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <button id="leaflet-dot-1" type="button" onclick="setLeafletPage(1)" style="height: 8px; width: 26px; border-radius: 9999px; background: #006537; border: none; cursor: pointer; transition: all 0.2s; padding: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.15);"></button>
+                      <button id="leaflet-dot-2" type="button" onclick="setLeafletPage(2)" style="height: 8px; width: 8px; border-radius: 9999px; background: #ddd5c7; border: none; cursor: pointer; transition: all 0.2s; padding: 0;"></button>
+                      <button id="leaflet-dot-3" type="button" onclick="setLeafletPage(3)" style="height: 8px; width: 8px; border-radius: 9999px; background: #ddd5c7; border: none; cursor: pointer; transition: all 0.2s; padding: 0;"></button>
+                      
+                    </div>
+
+                    <span style="font-size: 11px; font-weight: 700; color: #006537; background: #eae3d2; padding: 2px 10px; border-radius: 9999px; border: 1px solid #ddd5c5;">
+                      P1
+                    </span>
+                  </div>
+
+                </div>
+
+                <!-- Right Navigation Arrow - OUTSIDE the card -->
+                <button id="leaflet-side-next" type="button" onclick="setLeafletPage(currentLeafletPage + 1)" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; background: #006537; color: #ffffff; border: 2px solid #006537; box-shadow: 0 10px 20px rgba(0, 101, 55, 0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 1; transition: all 0.2s; font-size: 22px; font-weight: bold; z-index: 10;" aria-label="Next Page" title="Next Page">
+                  &#8594;
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      var currentLeafletPage = 1;
+      function setLeafletPage(page) {
+        if (page < 1 || page > 3) return;
+        currentLeafletPage = page;
+        var img = document.getElementById("leaflet-page-img");
+        if (img) img.src = "assets/leaflet-pages/page-" + page + ".png";
+        var num = document.getElementById("leaflet-page-num");
+        if (num) num.innerText = "Page " + page + " of 3";
+        
+        var sidePrev = document.getElementById("leaflet-side-prev");
+        var sideNext = document.getElementById("leaflet-side-next");
+        if (sidePrev) {
+          sidePrev.style.opacity = page === 1 ? "0.25" : "1";
+          sidePrev.style.cursor = page === 1 ? "not-allowed" : "pointer";
+        }
+        if (sideNext) {
+          sideNext.style.opacity = page === 3 ? "0.25" : "1";
+          sideNext.style.cursor = page === 3 ? "not-allowed" : "pointer";
+        }
+
+        for (var i = 1; i <= 3; i++) {
+          var dot = document.getElementById("leaflet-dot-" + i);
+          if (dot) {
+            dot.style.width = i === page ? "26px" : "8px";
+            dot.style.background = i === page ? "#006537" : "#ddd5c7";
+          }
+        }
+      }
+    </script>
+
+    
+
+    </div><!-- /#membershipLandingView -->
+
+    <!-- ========================================================================
+         INLINE REGISTRATION STEPPER SECTION (Step 1 -> Step 2 -> Step 3)
+         From React Membership Component
+         ======================================================================== -->
+    <section class="membership-stepper-section" id="membershipStepperSection" style="display: none;">
+      
+      <!-- Stepper Nav Bar -->
+      <div class="stepper-nav-bar" id="stepperNavBar">
+        <div class="stepper-progress-line"></div>
+        <div class="stepper-progress-fill" id="stepperProgressFill"></div>
+
+        <div class="stepper-node active" id="stepperNode1" data-step="1">
+          <div class="stepper-circle">1</div>
+          <span class="stepper-label">Personal Details</span>
+        </div>
+
+        <div class="stepper-node" id="stepperNode2" data-step="2">
+          <div class="stepper-circle">2</div>
+          <span class="stepper-label">Plan Confirmation</span>
+        </div>
+
+        <div class="stepper-node" id="stepperNode3" data-step="3">
+          <div class="stepper-circle">3</div>
+          <span class="stepper-label">Application Submitted</span>
+        </div>
+      </div>
+
+      <!-- Error Alert Box -->
+      <div id="stepperErrorAlert" style="display: none; background: #fee2e2; border-left: 4px solid #ef4444; color: #991b1b; padding: 12px 18px; border-radius: 12px; font-size: 13px; font-weight: 600; margin-bottom: 24px;"></div>
+
+      <!-- STEP 1: Personal Details Form -->
+      <div class="stepper-content-card" id="stepperStep1">
+        <div class="stepper-card-header">
+          <div>
+            <h2 class="stepper-card-title">Step 1: Customer Details</h2>
+            <p class="stepper-card-subtitle">Please provide accurate information for AIRO ONE membership registration.</p>
+          </div>
+          <button type="button" class="stepper-back-link" id="backToPlansOverviewBtn">← Back to Plans Overview</button>
+        </div>
+
+        <form id="stepperFormStep1">
+          <div class="stepper-form-grid">
+            <div class="stepper-form-field">
+              <label class="stepper-form-label">First Name *</label>
+              <div class="stepper-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <input type="text" id="step1FirstName" class="stepper-input" placeholder="Aditya" required>
+              </div>
+            </div>
+
+            <div class="stepper-form-field">
+              <label class="stepper-form-label">Last Name *</label>
+              <div class="stepper-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <input type="text" id="step1LastName" class="stepper-input" placeholder="Sharma" required>
+              </div>
+            </div>
+
+            <div class="stepper-form-field">
+              <label class="stepper-form-label">Mobile Number *</label>
+              <div class="stepper-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <input type="tel" id="step1Mobile" class="stepper-input" placeholder="+91 9876543210" maxlength="10" required>
+              </div>
+            </div>
+
+            <div class="stepper-form-field">
+              <label class="stepper-form-label">Email Address *</label>
+              <div class="stepper-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <input type="email" id="step1Email" class="stepper-input" placeholder="aditya.sharma@example.com" required>
+              </div>
+            </div>
+
+            <div class="stepper-form-field">
+              <label class="stepper-form-label">Date of Birth *</label>
+              <div class="stepper-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <input type="date" id="step1Dob" class="stepper-input" value="1992-05-18" required>
+              </div>
+            </div>
+
+            <div class="stepper-form-field">
+              <label class="stepper-form-label">Gender *</label>
+              <select id="step1Gender" class="stepper-input no-icon">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="stepper-form-field full-width">
+              <label class="stepper-form-label">Address *</label>
+              <div class="stepper-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="top: 16px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <textarea id="step1Address" class="stepper-textarea" placeholder="House/Flat No, Street, Landmark, City, PIN Code" required></textarea>
+              </div>
+            </div>
+
+            <div class="stepper-form-field full-width">
+              <label class="stepper-form-label">Emergency Contact <span style="font-weight: 400; color: #94a3b8;">(Optional)</span></label>
+              <div class="stepper-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+                <input type="text" id="step1Emergency" class="stepper-input" placeholder="Contact Name &amp; Mobile Number">
+              </div>
+            </div>
+          </div>
+
+          <div class="stepper-actions-row">
+            <button type="button" class="btn-stepper-cancel" id="cancelStep1Btn">Cancel</button>
+            <button type="button" class="btn-stepper-primary" id="proceedToStep2Btn">
+              <span>Proceed to Select Plan</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2: Plan Selection Confirmation -->
+      <div class="stepper-content-card" id="stepperStep2" style="display: none;">
+        <div class="stepper-card-header">
+          <div>
+            <h2 class="stepper-card-title">Step 2: Confirm Membership Plan &amp; Billing Cycle</h2>
+            <p class="stepper-card-subtitle">Select your preferred AIRO ONE plan duration &amp; tier.</p>
+          </div>
+        </div>
+
+        <!-- In-Store Payment Alert Notice -->
+        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 16px; padding: 16px 20px; display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px;">
+          <span style="font-size: 24px; line-height: 1;">🏪</span>
+          <div>
+            <h4 style="margin: 0 0 4px; font-size: 14px; font-weight: 800; color: #78350f;">In-Store Enrollment &amp; Payment</h4>
+            <p style="margin: 0; font-size: 13px; color: #92400e; line-height: 1.5;">
+              AIRO ONE memberships and payments are processed exclusively in-store. No online payment is collected now. Submitting this form books your registration for quick in-store payment (Cash, UPI, or Card) and instant activation at your nearest AIRO Clinic / Pharmacy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Billing Frequency Selector -->
+        <div style="display: flex; align-items: center; justify-content: space-between; background: #f8fafc; padding: 12px 18px; border-radius: 16px; border: 1px solid #e2e8f0; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 800; color: #334155;">Select Payment Frequency:</span>
+          <div class="billing-toggle-wrapper" style="padding: 4px;">
+            <button class="billing-toggle-btn active" id="step2ToggleQuarterly" type="button">
+              <span>Quarterly (Every 3 Months)</span>
+              <span class="billing-pill-badge">Incl. 18% GST</span>
+            </button>
+            <button class="billing-toggle-btn" id="step2ToggleAnnual" type="button">
+              <span>Annual (1 Year)</span>
+              <span class="billing-pill-badge" style="background: #92400e;">+ GST</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Interactive Plan Cards -->
+        <div class="step2-plans-grid">
+          <!-- 1. Select -->
+          <div class="step2-plan-card" data-tier="select">
+            <div class="step2-plan-badge">✓</div>
+            <div>
+              <h4 class="step2-plan-title">AIRO ONE Select</h4>
+              <p class="step2-plan-price" id="step2Price-select">₹590 <span style="font-size: 12px; font-weight: 600; color: #64748b;">/ qtr</span></p>
+              <span class="at-a-glance-gst-pill" id="step2Gst-select">✓ INCL. 18% GST</span>
+              <p style="font-size: 10px; color: #94a3b8; margin: 4px 0 0;" id="step2Alt-select">or ₹1,999/yr (+ GST)</p>
+            </div>
+            <p class="step2-plan-desc">Only 1 Member Covered • 3 Consultations • 4 Praana Screenings</p>
+          </div>
+
+          <!-- 2. Preferred -->
+          <div class="step2-plan-card selected" data-tier="preferred">
+            <div class="step2-plan-badge">✓</div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 class="step2-plan-title">AIRO ONE Preferred</h4>
+                <span style="background: #dcfce7; color: #006537; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">Popular</span>
+              </div>
+              <p class="step2-plan-price" id="step2Price-preferred">₹1,180 <span style="font-size: 12px; font-weight: 600; color: #64748b;">/ qtr</span></p>
+              <span class="at-a-glance-gst-pill" id="step2Gst-preferred">✓ INCL. 18% GST</span>
+              <p style="font-size: 10px; color: #94a3b8; margin: 4px 0 0;" id="step2Alt-preferred">or ₹3,999/yr (+ GST)</p>
+            </div>
+            <p class="step2-plan-desc">You + 1 Member • 1 Member Free Medication (350+ Meds)</p>
+          </div>
+
+          <!-- 3. Signature -->
+          <div class="step2-plan-card" data-tier="signature">
+            <div class="step2-plan-badge">✓</div>
+            <div>
+              <h4 class="step2-plan-title">AIRO ONE Signature</h4>
+              <p class="step2-plan-price" id="step2Price-signature">₹2,065 <span style="font-size: 12px; font-weight: 600; color: #64748b;">/ qtr</span></p>
+              <span class="at-a-glance-gst-pill" id="step2Gst-signature">✓ INCL. 18% GST</span>
+              <p style="font-size: 10px; color: #94a3b8; margin: 4px 0 0;" id="step2Alt-signature">or ₹6,999/yr (+ GST)</p>
+            </div>
+            <p class="step2-plan-desc">You + 3 Members • 2 Members Free Medication • Care365™ &amp; Ambulance</p>
+          </div>
+
+          <!-- 4. Infinite -->
+          <div class="step2-plan-card" data-tier="infinite">
+            <div class="step2-plan-badge">✓</div>
+            <div>
+              <h4 class="step2-plan-title">AIRO ONE Infinite</h4>
+              <p class="step2-plan-price" id="step2Price-infinite">₹2,655 <span style="font-size: 12px; font-weight: 600; color: #64748b;">/ qtr</span></p>
+              <span class="at-a-glance-gst-pill" id="step2Gst-infinite">✓ INCL. 18% GST</span>
+              <p style="font-size: 10px; color: #94a3b8; margin: 4px 0 0;" id="step2Alt-infinite">or ₹8,999/yr (+ GST)</p>
+            </div>
+            <p class="step2-plan-desc">You + 5 Members • 4 Members Free Medication • Care365™ &amp; Ambulance</p>
+          </div>
+        </div>
+
+        <!-- Application Overview Summary Box -->
+        <div class="step2-overview-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">
+            <strong style="font-size: 14px; color: #0f172a;">Application Overview:</strong>
+            <span style="font-size: 12px; color: #64748b;">In-Store Completion</span>
+          </div>
+          <div class="step2-overview-grid">
+            <div><strong>Applicant Name:</strong> <span id="summaryApplicantName">—</span></div>
+            <div><strong>Mobile:</strong> <span id="summaryApplicantMobile">—</span> | <strong>Email:</strong> <span id="summaryApplicantEmail">—</span></div>
+            <div><strong>Selected Plan:</strong> <span style="color: var(--airo-green); font-weight: 800;" id="summarySelectedPlan">AIRO ONE Preferred</span></div>
+            <div><strong>Billing Cycle:</strong> <span style="font-weight: 700; color: #1e293b;" id="summaryBillingCycle">Quarterly (Every 3 Months)</span></div>
+            <div><strong>Membership Fee:</strong> <span style="color: var(--airo-green); font-weight: 800;" id="summaryMembershipFee">₹1,180 / quarter (INCL. 18% GST)</span></div>
+            <div><strong>Payment Method:</strong> 🏪 In-Store (Cash / UPI / Card)</div>
+          </div>
+          <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #e2e8f0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: #92400e; font-weight: 600;">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #f59e0b;"></span>
+            <span><strong>Payment Status:</strong> Pending In-Store Collection by AIRO Staff</span>
+          </div>
+        </div>
+
+        <div class="stepper-actions-row">
+          <button type="button" class="btn-stepper-cancel" id="backToStep1Btn">← Edit Personal Info</button>
+          <button type="button" class="btn-stepper-primary" id="submitApplicationBtn">
+            <span>Submit Application (In-Store)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Submission Confirmation -->
+      <div class="stepper-content-card" id="stepperStep3" style="display: none;">
+        <div class="step3-success-container">
+          <div class="step3-check-bubble">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+
+          <span class="step3-status-badge">Pending In-Store Payment</span>
+          <h2 class="step3-title">Application Submitted Successfully!</h2>
+          <p class="step3-subtitle">Your AIRO ONE membership application has been received. Please visit your nearest AIRO Clinic / Pharmacy to complete payment and activate your membership card.</p>
+
+          <div class="step3-summary-card">
+            <div class="step3-summary-row">
+              <span style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 11px;">Registration ID</span>
+              <span style="font-family: monospace; font-size: 16px; font-weight: 800; color: #0f172a;" id="successRegId">REG-AIRO-84920</span>
+            </div>
+            <div class="step3-summary-row">
+              <span style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 11px;">Applicant Name</span>
+              <span style="font-weight: 700; color: #0f172a;" id="successApplicantName">—</span>
+            </div>
+            <div class="step3-summary-row">
+              <span style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 11px;">Selected Plan</span>
+              <span style="font-weight: 800; color: var(--airo-green);" id="successPlanName">AIRO ONE Preferred</span>
+            </div>
+            <div class="step3-summary-row">
+              <span style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 11px;">Billing Frequency</span>
+              <span style="font-weight: 700; color: #334155;" id="successBillingCycle">Quarterly (Every 3 Months)</span>
+            </div>
+            <div class="step3-summary-row">
+              <span style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 11px;">Membership Status</span>
+              <span style="background: #fef3c7; color: #92400e; font-weight: 800; padding: 3px 10px; border-radius: 9999px; font-size: 11px;">Pending In-Store Activation</span>
+            </div>
+          </div>
+
+          <!-- Instructions Card -->
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 18px; padding: 20px; text-align: left; margin-bottom: 24px; font-size: 13px; color: #064e3b; line-height: 1.6;">
+            <p style="margin: 0 0 10px; font-weight: 800; font-size: 14px; color: #006537; display: flex; align-items: center; gap: 8px;">
+              <span>🏪</span> How to Complete Your Activation In-Store:
+            </p>
+            <ol style="margin: 0; padding-left: 20px;">
+              <li>Visit your nearest <strong>AIRO Clinic &amp; Pharmacy</strong>.</li>
+              <li>Show your <strong>Registration ID (<span id="instructRegId">REG-AIRO-84920</span>)</strong> or registered mobile number to the front desk.</li>
+              <li>Make your payment via <strong>Cash, UPI, or Card</strong> for either the Quarterly or Annual rate.</li>
+              <li>Receive your activated <strong>AIRO ONE Member ID</strong>, physical card, and unlock digital benefits in the AIRO App!</li>
+            </ol>
+          </div>
+
+          <button type="button" class="btn-stepper-primary" id="returnToOverviewBtn" style="padding: 14px 36px; font-size: 15px;">
+            Return to Membership Overview
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 9. TERMS & CONDITIONS -->
+    <section class="membership-terms-section">
+      <div class="membership-container">
+        <div class="membership-terms">
+          <h5>Terms &amp; Conditions:</h5>
+          <ol>
+            <li>Pharmacy discounts apply only to eligible products and are subject to applicable laws, regulations, and company policies.</li>
+            <li>Membership benefits are available at participating AIRO locations and through the AIRO App.</li>
+            <li>Complimentary consultations, screenings, and health assessments must be used within the membership year.</li>
+            <li>The AIRO ONE™ Signature Comprehensive Health Assessment is a preventive health screening designed to help identify potential health risks. It is not intended to diagnose, treat, cure, or prevent any disease.</li>
+            <li>The products shown are for representation only, so what you get may look different.</li>
+            <li>AIRO can change the offer: It reserves the right to terminate, modify, or extend the offer at its sole discretion, without prior notice and without liability.</li>
+            <li>The offer is valid at select stores only and while stocks last.</li>
+            <li>All offers are applied as discounts on the customer’s invoice.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MODAL 1: ALREADY A MEMBER? CHECK STATUS & VIEW DIGITAL CARD
+       ======================================================================== -->
+  <div class="airo-modal-backdrop" id="lookupModal" role="dialog" aria-modal="true" aria-labelledby="lookupModalHeading">
+    <div class="airo-modal-box">
+      <div class="modal-header-bar">
+        <h3 id="lookupModalHeading">Look Up Active Membership</h3>
+        <button class="btn-close-modal" id="closeLookupModalBtn" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <div class="modal-inner-content">
+        <!-- Form View -->
+        <div id="lookupFormView">
+          <p style="font-size: 14px; color: #4b5563; margin: 0 0 16px;">
+            Enter your registered Mobile Number, Email, or Member ID to view your digital card and active health benefits.
+          </p>
+
+          <form id="lookupForm">
+            <div class="form-field-group">
+              <label for="lookupQueryInput">Mobile Number, Email, or Member ID</label>
+              <input type="text" id="lookupQueryInput" placeholder="e.g. 9000172121 or AIRO-849201" autocomplete="off" required>
+            </div>
+
+            <!-- Demo Quick Test Chips -->
+            <div style="margin-bottom: 20px;">
+              <span style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; display: block; margin-bottom: 6px;">Quick Demo Test Accounts:</span>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <button type="button" class="demo-lookup-chip" data-value="9000172121" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 8px; font-size: 12px; cursor: pointer; color: #334155;">9000172121 (Aditya - Preferred)</button>
+                <button type="button" class="demo-lookup-chip" data-value="90000182121" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 8px; font-size: 12px; cursor: pointer; color: #334155;">90000182121 (Dr. Rajesh - Signature)</button>
+                <button type="button" class="demo-lookup-chip" data-value="AIRO-849201" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 8px; font-size: 12px; cursor: pointer; color: #334155;">AIRO-849201 (Sunita - Infinite)</button>
+              </div>
+            </div>
+
+            <div id="lookupErrorBox" style="display: none; background: #fee2e2; border-left: 4px solid #ef4444; color: #991b1b; padding: 10px 14px; border-radius: 6px; font-size: 13px; margin-bottom: 16px;"></div>
+
+            <div id="lookupLoading" style="display: none; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px; color: #006537; font-size: 14px; font-weight: 600;">
+              <div style="width: 20px; height: 20px; border: 2.5px solid #006537; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+              <span>Searching active member registry...</span>
+            </div>
+
+            <button type="submit" class="btn-card-join" style="padding: 14px; font-size: 15px;">
+              Find My Digital Membership Card
+            </button>
+          </form>
+        </div>
+
+        <!-- Result View: Rendered Digital Membership Card -->
+        <div id="lookupResultView" style="display: none; text-align: center;">
+          
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;">
+            <span class="card-status-badge" style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 4px 12px;">
+              <span class="status-green-dot"></span> Active Membership
+            </span>
+          </div>
+
+          <!-- Digital Card View -->
+          <div class="digital-membership-card-wrap">
+            <div class="digital-card">
+              <!-- Top Row -->
+              <div class="digital-card-top">
+                <div class="card-brand-logo">
+                  <span>AIRO ONE</span>
+                  <span class="card-brand-pill">MEMBER</span>
+                </div>
+                <div class="card-status-badge">
+                  <span class="status-green-dot"></span>
+                  <span>VERIFIED</span>
+                </div>
+              </div>
+
+              <!-- Mid Row: Chip & QR -->
+              <div class="digital-card-mid">
+                <div class="card-chip"></div>
+                <div class="card-qr-box">
+                  <img src="public/images/qr-universal.png" alt="Membership QR" onerror="this.src='public/images/app-qr.jpg';">
+                </div>
+              </div>
+
+              <!-- Bottom Row: Member Info -->
+              <div class="digital-card-bottom">
+                <div style="text-align: left;">
+                  <h4 class="card-holder-name" id="cardMemberName">Aditya Sharma</h4>
+                  <p class="card-plan-name" id="cardMemberPlan">AIRO ONE™ Preferred</p>
+                </div>
+                <div class="card-meta-right">
+                  <p class="card-id-text" id="cardMemberId">AIRO-849201</p>
+                  <p class="card-expiry-text" id="cardMemberExpiry">Valid Thru: 31 Dec 2026</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status Summary Box -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; text-align: left; margin: 16px 0; font-size: 13px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: #64748b;">Coverage Tier:</span>
+              <strong id="statusSummaryTier" style="color: #006537;">AIRO ONE™ Preferred</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: #64748b;">Billing Cycle:</span>
+              <span id="statusSummaryCycle">Annual Membership</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: #64748b;">In-Store Verification:</span>
+              <span style="color: #10b981; font-weight: 600;">Authorized at all Clinics</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+            <button type="button" class="btn-membership-primary" style="padding: 10px 20px; font-size: 14px;" onclick="window.print();">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              <span>Print / Save Card</span>
+            </button>
+            <button type="button" class="btn-card-alt-join" id="lookupSearchAgainBtn" style="padding: 10px 18px;">
+              Search Another
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: IN-STORE ENROLLMENT APPLICATION FLOW (JOIN PLAN)
+       ======================================================================== -->
+  <div class="airo-modal-backdrop" id="enrollModal" role="dialog" aria-modal="true" aria-labelledby="enrollModalHeading">
+    <div class="airo-modal-box wide-modal">
+      <div class="modal-header-bar">
+        <h3 id="enrollModalHeading">AIRO ONE™ Membership Application</h3>
+        <button class="btn-close-modal" id="closeEnrollModalBtn" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <div class="modal-inner-content">
+        <!-- Step Progress Indicator -->
+        <div class="enroll-step-indicator">
+          <div class="step-indicator-item active" id="stepIndicator1">
+            <div class="step-number-bubble">1</div>
+            <span>Personal &amp; Plan</span>
+          </div>
+          <div style="flex-grow: 1; height: 2px; background: #e2e8f0; margin: 0 8px;"></div>
+          <div class="step-indicator-item" id="stepIndicator2">
+            <div class="step-number-bubble">2</div>
+            <span>Review &amp; In-Store</span>
+          </div>
+          <div style="flex-grow: 1; height: 2px; background: #e2e8f0; margin: 0 8px;"></div>
+          <div class="step-indicator-item" id="stepIndicator3">
+            <div class="step-number-bubble">3</div>
+            <span>Confirmation</span>
+          </div>
+        </div>
+
+        <!-- STEP 1: PERSONAL DETAILS & PLAN SELECTION -->
+        <div id="enrollStep1">
+          <!-- Modal Plan Picker Pills -->
+          <label style="display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 8px;">Select Membership Tier:</label>
+          <div class="modal-plan-selector">
+            <div class="modal-plan-pill" data-tier="select">
+              <strong>Select</strong>
+              <span>₹590 / qtr</span>
+            </div>
+            <div class="modal-plan-pill selected" data-tier="preferred">
+              <strong>Preferred</strong>
+              <span>₹1,180 / qtr</span>
+            </div>
+            <div class="modal-plan-pill" data-tier="signature">
+              <strong>Signature</strong>
+              <span>₹2,065 / qtr</span>
+            </div>
+            <div class="modal-plan-pill" data-tier="infinite">
+              <strong>Infinite</strong>
+              <span>₹2,655 / qtr</span>
+            </div>
+          </div>
+
+          <!-- Modal Billing Frequency Toggle -->
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; background: #f8fafc; padding: 10px 16px; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <span style="font-size: 13px; font-weight: 600; color: #334155;">Billing Frequency:</span>
+            <div class="billing-toggle-wrapper" style="padding: 3px;">
+              <button class="billing-toggle-btn active" id="modalCycleQuarterly" type="button" style="padding: 6px 14px; font-size: 12px;">Quarterly (Every 3 Mo)</button>
+              <button class="billing-toggle-btn" id="modalCycleAnnual" type="button" style="padding: 6px 14px; font-size: 12px;">Annual (1 Year)</button>
+            </div>
+          </div>
+
+          <!-- Form Fields -->
+          <div class="form-two-cols">
+            <div class="form-field-group">
+              <label for="enrollFirstName">First Name *</label>
+              <input type="text" id="enrollFirstName" placeholder="Aditya" required>
+            </div>
+            <div class="form-field-group">
+              <label for="enrollLastName">Last Name *</label>
+              <input type="text" id="enrollLastName" placeholder="Sharma" required>
+            </div>
+          </div>
+
+          <div class="form-two-cols">
+            <div class="form-field-group">
+              <label for="enrollMobile">Mobile Number (10 digits) *</label>
+              <input type="tel" id="enrollMobile" placeholder="9000172121" maxlength="10" required>
+            </div>
+            <div class="form-field-group">
+              <label for="enrollEmail">Email Address *</label>
+              <input type="email" id="enrollEmail" placeholder="aditya.sharma@gmail.com" required>
+            </div>
+          </div>
+
+          <div class="form-two-cols">
+            <div class="form-field-group">
+              <label for="enrollDob">Date of Birth</label>
+              <input type="date" id="enrollDob" value="1988-06-15">
+            </div>
+            <div class="form-field-group">
+              <label for="enrollGender">Gender</label>
+              <select id="enrollGender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field-group">
+            <label for="enrollStoreSelect">Preferred AIRO Clinic / Pharmacy Location for Activation *</label>
+            <select id="enrollStoreSelect">
+              <option value="Kondapur Flagship Hub (Jyothi Granules, Sy.No.199)">Kondapur Flagship Hub (Vamsiram's Jyothi Granules)</option>
+              <option value="Kompally Hub (Fairmount Downtown)">Kompally Hub (Fairmount Downtown)</option>
+              <option value="Jubilee Hills Care Hub">Jubilee Hills Care Hub (Road No. 36)</option>
+              <option value="Gachibowli Financial District Clinic">Gachibowli Financial District Clinic</option>
+              <option value="Banjara Hills Medical Center">Banjara Hills Medical Center (Road No. 12)</option>
+            </select>
+          </div>
+
+          <div class="form-field-group">
+            <label for="enrollEmergency">Emergency Contact Number (Optional)</label>
+            <input type="tel" id="enrollEmergency" placeholder="Family member or caregiver number">
+          </div>
+
+          <div id="enrollStep1Error" style="display: none; background: #fee2e2; border-left: 4px solid #ef4444; color: #991b1b; padding: 10px 14px; border-radius: 6px; font-size: 13px; margin-bottom: 16px;"></div>
+
+          <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+            <button type="button" class="btn-card-join" id="toStep2Btn" style="padding: 14px 28px; width: auto; font-size: 15px;">
+              Next: Review Application →
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: REVIEW APPLICATION -->
+        <div id="enrollStep2" style="display: none;">
+          <div class="review-summary-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;">
+              <strong style="font-size: 15px; color: #1a1a1a;">Application Summary</strong>
+              <span class="payment-status-pill">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #d97706; display: inline-block;"></span>
+                Pending In-Store Collection
+              </span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Applicant Name:</span>
+              <span class="review-val" id="revName">Aditya Sharma</span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Contact:</span>
+              <span class="review-val" id="revContact">9000172121 | aditya.sharma@gmail.com</span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Selected Plan:</span>
+              <span class="review-val val-green" id="revPlan">AIRO ONE™ Preferred</span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Members Covered:</span>
+              <span class="review-val" id="revMembers">You + 1 (2 Members)</span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Billing Cycle:</span>
+              <span class="review-val" id="revCycle">Quarterly (Every 3 Months)</span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Membership Fee:</span>
+              <span class="review-val val-green" id="revFee">₹1,180 / quarter (INCL. 18% GST)</span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Activation Location:</span>
+              <span class="review-val" id="revStore">Kondapur Flagship Hub</span>
+            </div>
+
+            <div class="review-summary-row">
+              <span class="review-label">Payment Mode:</span>
+              <span class="review-val">🏪 In-Store (Cash / UPI / Card)</span>
+            </div>
+          </div>
+
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 12px 16px; font-size: 13px; color: #166534; line-height: 1.5; margin-bottom: 20px;">
+            <strong>🏪 In-Store Activation Notice:</strong> AIRO memberships are registered online and activated at any AIRO Clinic or Pharmacy. Our counter staff will verify your details, accept payment, and issue your physical AIRO ONE card.
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button type="button" class="btn-card-alt-join" id="backToStep1Btn" style="width: auto; padding: 12px 20px;">
+              ← Edit Personal Info
+            </button>
+            <button type="button" class="btn-card-join" id="submitEnrollBtn" style="width: auto; padding: 14px 28px; font-size: 15px;">
+              Submit Application (In-Store) ✓
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: SUBMISSION SUCCESS & IN-STORE VOUCHER -->
+        <div id="enrollStep3" style="display: none;">
+          <div class="submission-success-view">
+            <div class="success-check-bubble">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006537" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+
+            <span class="success-badge-pill">Pending In-Store Payment</span>
+            <h3 class="success-title">Application Submitted Successfully!</h3>
+            <p class="success-subtitle">
+              Your AIRO ONE membership application has been received. Please visit your nearest AIRO Clinic / Pharmacy to complete payment and activate your membership card.
+            </p>
+
+            <!-- Printable Voucher Box -->
+            <div class="voucher-ticket-box">
+              <div class="voucher-ticket-row">
+                <span style="color: #64748b;">Registration ID:</span>
+                <span class="voucher-reg-id" id="successRegId">AIRO-REG-84729</span>
+              </div>
+              <div class="voucher-ticket-row">
+                <span style="color: #64748b;">Applicant Name:</span>
+                <strong id="successApplicantName">Aditya Sharma</strong>
+              </div>
+              <div class="voucher-ticket-row">
+                <span style="color: #64748b;">Selected Plan:</span>
+                <strong style="color: #006537;" id="successPlanName">AIRO ONE™ Preferred</strong>
+              </div>
+              <div class="voucher-ticket-row">
+                <span style="color: #64748b;">Billing Frequency:</span>
+                <span id="successCycleName">Quarterly (Every 3 Months)</span>
+              </div>
+              <div class="voucher-ticket-row">
+                <span style="color: #64748b;">Total Payable at Store:</span>
+                <strong style="color: #006537;" id="successTotalPayable">₹1,180 (Incl. 18% GST)</strong>
+              </div>
+            </div>
+
+            <!-- In-store Steps -->
+            <div class="instore-instructions-list">
+              <h5>How to Complete Your Activation In-Store:</h5>
+              <ol>
+                <li>Visit any AIRO Clinic or Pharmacy location.</li>
+                <li>Share your <strong>Registration ID</strong> or registered <strong>Mobile Number</strong> at the reception counter.</li>
+                <li>Pay the membership fee via <strong>Cash, UPI, or Credit/Debit Card</strong>.</li>
+                <li>Receive your personalized AIRO ONE physical card, welcome kit, and unlock all digital benefits in the AIRO App!</li>
+              </ol>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: center;">
+              <button type="button" class="btn-membership-primary" id="printVoucherBtn" style="padding: 12px 24px; font-size: 14px;">
+                Print / Save Application Voucher
+              </button>
+              <button type="button" class="btn-card-alt-join" id="closeSuccessEnrollBtn" style="padding: 12px 24px; font-size: 14px;">
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="about" role="contentinfo">
+    <div class="nav-container footer-content-wrapper">
+      <!-- Brand & Mission Column -->
+      <div class="footer-col brand-col">
+        <h2 class="footer-brand-logo">AIRO</h2>
+        <p class="footer-tagline">At AIRO, we believe in preventing illness before it happens. Connecting healthy groceries, clinics, pharmacy &amp; compounding, and online care.</p>
+        
+        <!-- Live Verified Contact Details -->
+        <div class="footer-helpline-box" style="margin-top: 16px; font-size: 13px; color: var(--color-muted); line-height: 1.6;">
+          <p style="margin-bottom: 4px;"><strong style="color: var(--color-ink);">Customer Support &amp; Concierge:</strong> <a href="tel:+919000172121" style="color: var(--color-ink); text-decoration: underline;">+91 90001 72121</a></p>
+          <p style="margin-bottom: 4px;"><strong style="color: var(--color-ink);">Health &amp; Clinical Care:</strong> <a href="tel:+9190000182121" style="color: var(--color-ink); text-decoration: underline;">+91 90000 182121</a></p>
+          <p style="margin-bottom: 6px;"><strong style="color: var(--color-ink);">Email:</strong> <a href="mailto:info@airohealthhub.com" style="color: var(--color-ink); text-decoration: underline;">info@airohealthhub.com</a></p>
+          <p style="font-size: 12px; color: #666;">Service Hours: Mon – Fri: 8:00 AM – 8:00 PM | Sat – Sun: 9:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Ecosystem -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Ecosystem</h3>
+        <ul class="footer-links">
+          <li><a href="essentials.html">AIRO Essentials</a></li>
+          <li><a href="pharmacy.html">Pharmacy &amp; Compounding</a></li>
+          <li><a href="index.html#minute-clinic-services">AIRO Minute Clinic</a></li>
+          <li><a href="https://airoemed.com" target="_blank" rel="noopener noreferrer">AIRO eMed ↗</a></li>
+          <li><a href="https://drinkairo.com" target="_blank" rel="noopener noreferrer">Drink AIRO ↗</a></li>
+          <li><a href="index.html#minute-clinic-banner">Praana Smart Chair</a></li>
+          <li><a href="membership.html">AIRO ONE™ Membership</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Physical Hubs & Support -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Hub Locations</h3>
+        <ul class="footer-links" style="font-size: 12.5px; line-height: 1.5;">
+          <li style="margin-bottom: 8px;">
+            <strong style="color: var(--color-ink); display: block;">Kondapur Flagship</strong>
+            <span>Shop No.2, Ground &amp; 1st Floor, Vamsiram's Jyothi Granules, Sy.No.199, Kondapur, Hyderabad - 500084</span>
+          </li>
+          <li style="margin-bottom: 8px;">
+            <strong style="color: var(--color-ink); display: block;">Kompally Hub</strong>
+            <span>Shop No. 12 &amp; 112, Fairmount Downtown, Kompally, Dundigal, Hyderabad - 500100</span>
+          </li>
+          <li><a href="index.html#about" style="color: #143526; font-weight: 600; text-decoration: underline;">View All Hub Details &amp; Directions ›</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Legal & Portals -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Legal &amp; Portals</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#privacy" class="legal-link" data-doc="privacy">Privacy Policy</a></li>
+          <li><a href="index.html#terms" class="legal-link" data-doc="terms">Terms of Service</a></li>
+          <li><a href="index.html#refund" class="legal-link" data-doc="refund">Refund Policy</a></li>
+          <li><a href="index.html#cookie" class="legal-link" data-doc="cookie">Cookie Preferences</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 4: Follow Us -->
+      <div class="footer-col social-col">
+        <h3 class="footer-col-title">Follow Us</h3>
+        <div class="social-links-row">
+          <!-- Instagram -->
+          <a href="https://instagram.com" class="social-icon-btn" aria-label="Follow AIRO on Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="https://twitter.com" class="social-icon-btn" aria-label="Follow AIRO on Twitter" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" class="social-icon-btn" aria-label="Follow AIRO on LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Sub-Footer -->
+    <div class="footer-bottom-bar">
+      <div class="nav-container footer-bottom-inner">
+        <p class="copyright-notice">&copy; 2026 AIRO ONE. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/membership.js"></script>
+</body>
+</html>
