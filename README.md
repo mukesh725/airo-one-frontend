@@ -2,6 +2,10 @@
 
 > Premium digital storefront and clinical care web application for the **AIRO ONE™** integrated healthcare ecosystem, bridging organic groceries, compounding pharmacy, walk-in minute clinics, digital membership, and diagnostic pods.
 
+- **Production URL**: [https://airo-one-frontend.vercel.app](https://airo-one-frontend.vercel.app)
+- **GitHub Repository**: [https://github.com/mukesh725/airo-one-frontend](https://github.com/mukesh725/airo-one-frontend)
+- **CI/CD**: Connected directly to Vercel — all commits pushed to `main` deploy to production automatically.
+
 ---
 
 ## 📁 Repository Structure
